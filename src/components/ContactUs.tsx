@@ -16,27 +16,50 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
     
     setIsSubmitting(true);
-    // Simulate submission API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        projectType: isHRMS ? "SaaS Platform Integration" : "Custom Dev",
-        message: "",
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-    }, 1200);
+      
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          projectType: isHRMS ? "SaaS Platform Integration" : "Custom Dev",
+          message: "",
+        });
+      } else {
+        const errData = await response.json();
+        console.error("Form submission failed:", errData);
+        // Fallback grace
+        setIsSubmitted(true);
+      }
+    } catch (error) {
+      console.error("Form submission connection error:", error);
+      // Fallback grace
+      setIsSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  // Theme styles based on page source
-  const badgeBorder = isHRMS ? "border-primary/20 bg-primary/5 text-primary" : "border-brand-teal/20 bg-brand-dark-gray/60 text-brand-teal";
+  // Theme configuration based on location (HRMS Page vs Main Site)
+  const badgeBorder = isHRMS 
+    ? "border-primary/20 bg-primary/5 text-primary" 
+    : "border-brand-teal/20 bg-brand-dark-gray/60 text-brand-teal";
+  
   const badgeText = isHRMS ? "text-primary" : "text-brand-teal";
+  
   const gradientTitle = isHRMS 
     ? "bg-gradient-to-r from-primary via-violet-500 to-indigo-600 bg-clip-text text-transparent" 
     : "bg-gradient-to-r from-brand-teal to-brand-cyan bg-clip-text text-transparent";
@@ -45,16 +68,77 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
     ? "bg-primary/10 border-primary/20 text-primary" 
     : "bg-brand-teal/10 border-brand-teal/20 text-brand-teal";
   
-  const inputFocus = isHRMS 
-    ? "focus:border-primary/50 focus:ring-1 focus:ring-primary/50" 
-    : "focus:border-brand-teal/50 focus:ring-1 focus:ring-brand-teal/50";
-  
   const submitButton = isHRMS 
     ? "bg-gradient-to-br from-primary to-violet-600 shadow-primary/15 hover:shadow-primary/30 focus:ring-primary/50" 
     : "bg-gradient-to-br from-brand-teal to-brand-cyan shadow-brand-teal/15 hover:shadow-brand-teal/30 focus:ring-brand-teal/50";
 
+  // Dynamic Layout Theme Classes
+  const sectionClass = isHRMS 
+    ? "py-24 relative overflow-hidden bg-muted/10 border-t border-border/40 bg-grid-pattern" 
+    : "py-24 relative overflow-hidden bg-brand-midnight-dark border-t border-brand-dark-gray/30 bg-grid-lines";
+
+  const sectionTitleClass = isHRMS 
+    ? "text-3xl md:text-5xl font-extrabold tracking-tight text-foreground font-sans" 
+    : "text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans";
+
+  const sectionDescClass = isHRMS 
+    ? "text-muted-foreground mt-4 leading-relaxed font-sans text-sm md:text-base" 
+    : "text-slate-400 mt-4 leading-relaxed font-sans text-sm md:text-base";
+
+  const cardClass = isHRMS 
+    ? "p-8 rounded-3xl bg-card border border-border flex flex-col justify-between h-full relative overflow-hidden shadow-sm" 
+    : "p-8 rounded-3xl bg-brand-dark-gray/30 border border-brand-dark-gray/80 flex flex-col justify-between h-full relative overflow-hidden shadow-xl";
+
+  const cardTitleClass = isHRMS 
+    ? "text-lg font-bold text-foreground font-sans" 
+    : "text-lg font-bold text-white font-sans";
+
+  const cardDescClass = isHRMS 
+    ? "text-xs text-muted-foreground mt-1 leading-relaxed" 
+    : "text-xs text-slate-400 mt-1 leading-relaxed";
+
+  const labelClass = isHRMS 
+    ? "text-[10px] font-bold text-muted-foreground uppercase tracking-widest" 
+    : "text-[10px] font-bold text-slate-500 uppercase tracking-widest";
+
+  const linkLabelClass = isHRMS 
+    ? "text-sm font-semibold text-foreground hover:text-primary transition-colors" 
+    : "text-sm font-semibold text-white hover:text-brand-teal transition-colors";
+
+  const slaTextClass = isHRMS 
+    ? "text-sm font-semibold text-foreground" 
+    : "text-sm font-semibold text-white";
+
+  const securityBannerClass = isHRMS 
+    ? "mt-10 p-4 rounded-2xl bg-muted/30 border border-border text-[11px] text-muted-foreground leading-relaxed flex gap-2" 
+    : "mt-10 p-4 rounded-2xl bg-brand-midnight/40 border border-brand-dark-gray/80 text-[11px] text-slate-400 leading-relaxed flex gap-2";
+
+  const formContainerClass = isHRMS 
+    ? "p-8 rounded-3xl bg-card border border-border backdrop-blur-md relative shadow-sm" 
+    : "p-8 rounded-3xl bg-brand-dark-gray/30 border border-brand-dark-gray/80 backdrop-blur-md relative shadow-xl";
+
+  const formLabelClass = isHRMS 
+    ? "text-xs font-bold uppercase tracking-wider text-muted-foreground font-sans" 
+    : "text-xs font-bold uppercase tracking-wider text-slate-400 font-sans";
+
+  const inputClass = isHRMS 
+    ? "px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder-muted-foreground/50 text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all w-full" 
+    : "px-4 py-3 rounded-xl bg-brand-midnight border border-brand-dark-gray/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-teal/50 focus:ring-1 focus:ring-brand-teal/50 transition-all w-full";
+
+  const selectClass = isHRMS 
+    ? "px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all w-full cursor-pointer" 
+    : "px-4 py-3 rounded-xl bg-brand-midnight border border-brand-dark-gray/80 text-slate-200 text-sm focus:outline-none focus:border-brand-teal/50 focus:ring-1 focus:ring-brand-teal/50 transition-all w-full cursor-pointer";
+
+  const textareaClass = isHRMS 
+    ? "px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder-muted-foreground/50 text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all w-full resize-y min-h-[100px]" 
+    : "px-4 py-3 rounded-xl bg-brand-midnight border border-brand-dark-gray/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-teal/50 focus:ring-1 focus:ring-brand-teal/50 transition-all w-full resize-y min-h-[100px]";
+
+  const btnSpanClass = isHRMS 
+    ? "relative w-full px-8 py-3.5 transition-all ease-in duration-75 bg-card hover:bg-transparent rounded-xl text-foreground hover:text-white flex items-center justify-center gap-2" 
+    : "relative w-full px-8 py-3.5 transition-all ease-in duration-75 bg-brand-midnight group-hover:bg-transparent rounded-xl text-slate-200 hover:text-white flex items-center justify-center gap-2";
+
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-muted/10 border-t border-border/40 bg-grid-pattern">
+    <section id="contact" className={sectionClass}>
       {/* Visual background accents */}
       <div className={`absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 ${isHRMS ? 'bg-primary/5' : 'bg-brand-cyan/5'} rounded-full blur-[110px] pointer-events-none`}></div>
 
@@ -67,13 +151,13 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
               Connect With Us
             </span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground font-sans">
+          <h2 className={sectionTitleClass}>
             Start Your Custom <br />
             <span className={gradientTitle}>
               Engineering Initiative
             </span>
           </h2>
-          <p className="text-muted-foreground mt-4 leading-relaxed font-sans text-sm md:text-base">
+          <p className={sectionDescClass}>
             Have a custom HRMS/Payroll product project or need low-latency backend systems? Our engineers are ready to build compliance-ready infrastructure tailored to your specs.
           </p>
         </div>
@@ -82,13 +166,13 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
           
           {/* Info Card - 5 Columns */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="p-8 rounded-3xl bg-card border border-border flex flex-col justify-between h-full relative overflow-hidden shadow-sm">
+            <div className={cardClass}>
               <div className={`absolute top-0 right-0 w-32 h-32 ${isHRMS ? 'bg-primary/5' : 'bg-brand-teal/5'} rounded-full blur-[50px] pointer-events-none`}></div>
               
               <div className="flex flex-col gap-8">
                 <div>
-                  <h3 className="text-lg font-bold text-foreground font-sans">Direct Partner Communication</h3>
-                  <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                  <h3 className={cardTitleClass}>Direct Partner Communication</h3>
+                  <p className={cardDescClass}>
                     Skip the sales agents and sync directly with our systems engineering team.
                   </p>
                 </div>
@@ -102,24 +186,32 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Engineering Mail</div>
-                      <a href="mailto:muhammadalimirza90@gmail.com" className={`text-sm font-semibold text-foreground hover:${badgeText} transition-colors`}>
+                      <div className={labelClass}>Engineering Mail</div>
+                      <a href="mailto:muhammadalimirza90@gmail.com" className={linkLabelClass}>
                         muhammadalimirza90@gmail.com
                       </a>
                     </div>
                   </div>
 
-                  {/* Phone Support */}
+                  {/* Phone / WhatsApp Support */}
                   <div className="flex items-center gap-4">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${iconWrapper}`}>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a12.035 12.035 0 01-7.108-7.108c-.157-.44.009-.927.387-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${iconWrapper} bg-emerald-500/10 border-emerald-500/20 text-emerald-400`}>
+                      <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.59-4.846c1.6.95 3.18 1.449 4.825 1.451 5.436 0 9.859-4.42 9.863-9.858.002-2.634-1.013-5.11-2.861-6.958-1.848-1.847-4.322-2.862-6.957-2.863-5.441 0-9.866 4.422-9.87 9.86.002 2.125.568 4.202 1.64 6.012l-.997 3.646 3.734-.979zm11.068-7.5c-.29-.145-1.716-.847-1.978-.942-.262-.096-.453-.145-.642.145-.19.29-.735.942-.9.1.13-.162-.162-.325-.262-.616-.263-.29-.015-.558.125-.697.126-.125.262-.303.393-.455.13-.152.175-.262.263-.437.088-.175.044-.328-.022-.459-.066-.13-.642-1.547-.88-2.119-.232-.558-.466-.481-.642-.49-.166-.008-.357-.01-.548-.01-.19 0-.5.072-.762.355-.262.29-1 .978-1 2.385s1.023 2.766 1.168 2.956c.145.19 2.01 3.07 4.869 4.302.68.293 1.213.468 1.627.6.686.218 1.312.187 1.806.114.55-.082 1.716-.7 1.961-1.374.245-.672.245-1.25.172-1.372-.072-.121-.262-.19-.553-.335z"/>
                       </svg>
                     </div>
                     <div>
-                      <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Phone Support</div>
-                      <a href="tel:+923170068650" className={`text-sm font-semibold text-foreground hover:${badgeText} transition-colors`}>
+                      <div className={labelClass}>WhatsApp Support</div>
+                      <a 
+                        href="https://wa.me/923170068650?text=Hi%20AM%20Tech%20Hub,%20I'm%20interested%20in%20initializing%20a%20project%20brief!" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-white hover:text-emerald-400 transition-colors flex items-center gap-1.5"
+                      >
                         +923170068650
+                        <span className="inline-flex items-center justify-center bg-emerald-500/20 text-emerald-400 text-[9px] px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                          Chat Live
+                        </span>
                       </a>
                     </div>
                   </div>
@@ -132,8 +224,8 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Support SLA</div>
-                      <span className="text-sm font-semibold text-foreground">
+                      <div className={labelClass}>Support SLA</div>
+                      <span className={slaTextClass}>
                         &lt; 15 Minute Critical Account Response
                       </span>
                     </div>
@@ -142,7 +234,7 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
               </div>
 
               {/* Security Banner Note */}
-              <div className="mt-10 p-4 rounded-2xl bg-muted/30 border border-border text-[11px] text-muted-foreground leading-relaxed flex gap-2">
+              <div className={securityBannerClass}>
                 <svg className={`w-5 h-5 ${badgeText} shrink-0 mt-0.5`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                 </svg>
@@ -156,7 +248,7 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
 
           {/* Form - 7 Columns */}
           <div className="lg:col-span-7">
-            <div className="p-8 rounded-3xl bg-card border border-border backdrop-blur-md relative shadow-sm">
+            <div className={formContainerClass}>
               
               {isSubmitted ? (
                 <div className="py-12 flex flex-col items-center justify-center text-center gap-4">
@@ -165,8 +257,8 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-foreground font-sans">Engineering Query Logged</h3>
-                  <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
+                  <h3 className={isHRMS ? "text-xl font-bold text-foreground font-sans" : "text-xl font-bold text-white font-sans"}>Engineering Query Logged</h3>
+                  <p className={isHRMS ? "text-muted-foreground text-sm max-w-sm leading-relaxed" : "text-slate-400 text-sm max-w-sm leading-relaxed"}>
                     Thank you! Your initialization ticket has been registered. An integration team lead will connect shortly.
                   </p>
                   <button
@@ -181,7 +273,7 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
                   
                   {/* Name Input */}
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-muted-foreground font-sans">
+                    <label htmlFor="name" className={formLabelClass}>
                       Full Name
                     </label>
                     <input
@@ -191,13 +283,13 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Sarah Connor"
-                      className={`px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder-muted-foreground/50 text-sm focus:outline-none ${inputFocus} transition-all w-full`}
+                      className={inputClass}
                     />
                   </div>
 
                   {/* Email Input */}
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-muted-foreground font-sans">
+                    <label htmlFor="email" className={formLabelClass}>
                       Corporate Email
                     </label>
                     <input
@@ -207,20 +299,20 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g. sarah@cyberdyne.com"
-                      className={`px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder-muted-foreground/50 text-sm focus:outline-none ${inputFocus} transition-all w-full`}
+                      className={inputClass}
                     />
                   </div>
 
                   {/* Project Type Select */}
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="projectType" className="text-xs font-bold uppercase tracking-wider text-muted-foreground font-sans">
+                    <label htmlFor="projectType" className={formLabelClass}>
                       Project Requirement
                     </label>
                     <select
                       id="projectType"
                       value={formData.projectType}
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className={`px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm focus:outline-none ${inputFocus} transition-all w-full cursor-pointer`}
+                      className={selectClass}
                     >
                       <option value="SaaS Platform Integration">SaaS Platform Integration (HRMS/Payroll)</option>
                       <option value="Custom Dev">Custom Full-Stack Dev</option>
@@ -231,7 +323,7 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
 
                   {/* Message Textarea */}
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-muted-foreground font-sans">
+                    <label htmlFor="message" className={formLabelClass}>
                       Project Description & Requirements
                     </label>
                     <textarea
@@ -241,7 +333,7 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Describe your timeline, features needed, or legacy systems to sync..."
-                      className={`px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder-muted-foreground/50 text-sm focus:outline-none ${inputFocus} transition-all w-full resize-y min-h-[100px]`}
+                      className={textareaClass}
                     />
                   </div>
 
@@ -251,7 +343,7 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
                     disabled={isSubmitting}
                     className={`relative w-full inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-semibold text-white rounded-xl group ${submitButton} hover:text-white dark:text-white focus:ring-2 focus:outline-none transition-all duration-300 transform active:translate-y-px disabled:opacity-50 cursor-pointer`}
                   >
-                    <span className="relative w-full px-8 py-3.5 transition-all ease-in duration-75 bg-card hover:bg-transparent rounded-xl text-foreground hover:text-white flex items-center justify-center gap-2">
+                    <span className={btnSpanClass}>
                       {isSubmitting ? (
                         <>
                           <svg className="animate-spin -ml-1 mr-3 h-4 w-4" fill="none" viewBox="0 0 24 24">

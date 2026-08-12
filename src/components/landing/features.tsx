@@ -8,6 +8,7 @@ import {
   RiHandCoinLine,
   RiAwardLine,
   RiCheckboxCircleFill,
+  RiGraduationCapLine,
 } from "@remixicon/react";
 
 const FEATURES_DATA = [
@@ -99,6 +100,21 @@ const FEATURES_DATA = [
       "Disciplinary Appeals Routing",
       "Custom Assessment Forms",
       "Custom Approval Workflows",
+    ],
+  },
+  {
+    title: "Training & Development Module",
+    description: "Accelerate professional growth, track course progress, manage certifications, and collect training feedback.",
+    icon: RiGraduationCapLine,
+    color: "from-fuchsia-500 to-purple-600",
+    glowColor: "rgba(217, 70, 239, 0.15)",
+    items: [
+      "Training Course Registry",
+      "Corporate Certification Tracking",
+      "Employee Quiz & Assessment Portal",
+      "Automatic Retraining Tickers",
+      "Feedback & Review Forms",
+      "Skills Matrix Telemetry Dashboard",
     ],
   },
 ];

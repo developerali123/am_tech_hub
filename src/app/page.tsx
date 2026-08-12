@@ -10,6 +10,8 @@ import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 import DemoModal from "@/components/DemoModal";
 import ScrollToTop from "@/components/ScrollToTop";
+import Testimonials from "@/components/Testimonials";
+import CaseStudies from "@/components/CaseStudies";
 
 export default function Home() {
   const [isDemoOpen, setIsDemoOpen] = useState(false);
@@ -83,6 +85,9 @@ export default function Home() {
           <Services />
         </section>
 
+        {/* Case Studies / Operational Impact */}
+        <CaseStudies />
+
         {/* Interactive ROI Calculator Section */}
         <section id="industries">
           <ROICalculator />
@@ -123,6 +128,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Testimonials Section */}
+        <Testimonials />
 
         {/* Detailed Enterprise FAQ / Trust Accordion Section */}
         <section id="faq" className="py-24 relative bg-brand-midnight">

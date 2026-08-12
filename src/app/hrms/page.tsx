@@ -20,7 +20,7 @@ import { Faq } from "@/components/landing/faq";
 import { QuickStats } from "@/components/landing/quick-stats";
 import { CtaFooter } from "@/components/landing/cta-footer";
 import { ScrollReveal } from "@/components/landing/scroll-reveal";
-import ContactUs from "@/components/ContactUs";
+import HRMSContact from "@/components/HRMSContact";
 import DemoModal from "@/components/DemoModal";
 
 export default function HRMSPage() {
@@ -97,7 +97,7 @@ export default function HRMSPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <ContactUs isHRMS={true} />
+          <HRMSContact />
         </ScrollReveal>
       </main>
       <CtaFooter />

@@ -21,18 +21,18 @@ export default function Footer() {
       title: "SaaS Platforms",
       links: [
         { name: "Enterprise HRMS", href: "/hrms" },
-        { name: "Automated Payroll", href: "/hrms" },
-        { name: "Modular CRM", href: "#" },
-        { name: "Security & Access", href: "#" },
+        { name: "Automated Payroll", href: "/hrms#payroll" },
+        { name: "Modular CRM", href: "/hrms#features" },
+        { name: "Security & Access", href: "/hrms#security" },
       ],
     },
     {
       title: "Custom Dev",
       links: [
         { name: "Full-Stack Dev", href: "/#dev" },
-        { name: "Microservices", href: "/#dev" },
+        { name: "AI Automations", href: "/#ai" },
         { name: "High-Concurrency", href: "/#dev" },
-        { name: "DevOps & CI/CD", href: "/#dev" },
+        { name: "DevOps & CI/CD", href: "/#devops" },
       ],
     },
     {
@@ -48,8 +48,8 @@ export default function Footer() {
       title: "Company",
       links: [
         { name: "About Us", href: "/about" },
-        { name: "Careers", href: "#" },
-        { name: "Technical Blog", href: "#" },
+        { name: "Careers", href: "/about#careers" },
+        { name: "Technical Blog", href: "/about#blog" },
         { name: "Contact Hub", href: "/#contact" },
       ],
     },
@@ -176,13 +176,13 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} AM Tech Hub. All rights reserved.
           </div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-brand-teal transition-colors">
+            <a href="/about#privacy" className="hover:text-brand-teal transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-brand-teal transition-colors">
+            <a href="/about#terms" className="hover:text-brand-teal transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="hover:text-brand-teal transition-colors">
+            <a href="/about#security" className="hover:text-brand-teal transition-colors">
               Security Compliance
             </a>
           </div>
