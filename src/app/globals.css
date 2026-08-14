@@ -209,3 +209,13 @@ body {
     linear-gradient(to right, var(--border) 1px, transparent 1px),
     linear-gradient(to bottom, var(--border) 1px, transparent 1px);
 }
+
+/* Global scroll behavior & offset overrides */
+html {
+  scroll-behavior: smooth;
+}
+
+#about, #saas, #dev, #ai, #devops, #case-studies, #testimonials, #faq, #contact {
+  scroll-margin-top: 96px; /* equivalent to scroll-mt-24 */
+}
+

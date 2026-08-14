@@ -198,15 +198,15 @@ export default function Hero({ onOpenDemo }: HeroProps) {
 
         {/* Double CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 w-full justify-center items-center">
-          <button
-            onClick={onOpenDemo}
-            className="w-full sm:w-auto px-8 py-4 text-sm font-bold text-brand-midnight rounded-full bg-gradient-to-r from-brand-teal to-brand-cyan hover:shadow-xl hover:shadow-brand-teal/25 hover:scale-[1.02] active:scale-100 transition-all duration-300 cursor-pointer"
+          <a
+            href="#contact"
+            className="w-full sm:w-auto px-8 py-4 text-sm font-bold text-brand-midnight rounded-full bg-gradient-to-r from-brand-teal to-brand-cyan hover:shadow-xl hover:shadow-brand-teal/25 hover:scale-[1.02] active:scale-100 transition-all duration-300 text-center font-sans"
           >
             Explore Our Platforms
-          </button>
+          </a>
           <a
-            href="#saas"
-            className="w-full sm:w-auto px-8 py-4 text-sm font-bold text-white rounded-full border border-slate-700 bg-brand-dark-gray/30 hover:border-brand-teal/50 hover:bg-brand-dark-gray/60 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] active:scale-100 text-center"
+            href="#contact"
+            className="w-full sm:w-auto px-8 py-4 text-sm font-bold text-white rounded-full border border-slate-700 bg-brand-dark-gray/30 hover:border-brand-teal/50 hover:bg-brand-dark-gray/60 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] active:scale-100 text-center font-sans"
           >
             Talk to an Architect
           </a>

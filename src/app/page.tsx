@@ -12,6 +12,7 @@ import DemoModal from "@/components/DemoModal";
 import ScrollToTop from "@/components/ScrollToTop";
 import Testimonials from "@/components/Testimonials";
 import CaseStudies from "@/components/CaseStudies";
+import AboutUs from "@/components/AboutUs";
 
 export default function Home() {
   const [isDemoOpen, setIsDemoOpen] = useState(false);
@@ -75,6 +76,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* About Us Section */}
+        <AboutUs />
+
         {/* Dashboard Preview Section */}
         <section id="saas">
           <DashboardPreview />
@@ -91,42 +95,6 @@ export default function Home() {
         {/* Interactive ROI Calculator Section */}
         <section id="industries">
           <ROICalculator />
-        </section>
-
-        {/* Custom Product Spotlight Section */}
-        <section className="py-16 relative bg-brand-midnight">
-          <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
-            <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-r from-brand-dark-gray/80 to-brand-midnight border border-brand-teal/20 relative overflow-hidden group">
-              <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-teal/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-brand-teal/15 transition-all duration-500"></div>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-                <div className="lg:col-span-8">
-                  <span className="text-[10px] font-bold tracking-widest text-brand-teal uppercase bg-brand-teal/10 px-3 py-1 rounded-full">
-                    Custom Product Spotlight
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-extrabold text-white mt-4 font-sans">
-                    Our Enterprise HRMS & Automated Payroll
-                  </h3>
-                  <p className="text-slate-400 text-sm md:text-base mt-3 max-w-3xl leading-relaxed font-sans">
-                    Looking for a custom workforce solution? We offer a completely integrated, audit-ready HRMS & Payroll system tailored specifically to solve your multi-state compliance, roster scheduling, and salary disbursement challenges.
-                  </p>
-                </div>
-                <div className="lg:col-span-4 flex lg:justify-end">
-                  <a
-                    href="/hrms"
-                    className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-semibold text-white rounded-full group bg-gradient-to-br from-brand-teal to-brand-cyan group-hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-brand-teal/50 shadow-lg shadow-brand-teal/15 hover:shadow-brand-teal/30 transition-all duration-300 transform hover:-translate-y-0.5"
-                  >
-                    <span className="relative px-8 py-3.5 transition-all ease-in duration-75 bg-brand-midnight rounded-full group-hover:bg-transparent flex items-center gap-2">
-                      Launch Interactive Demo
-                      <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* Testimonials Section */}
