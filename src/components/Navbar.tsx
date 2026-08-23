@@ -29,19 +29,19 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
     {
       name: "Services",
       items: [
-        { name: "SaaS Product Ecosystem", href: "/#saas" },
-        { name: "AI Agentic Automations", href: "/#ai" },
-        { name: "Custom Full-Stack Engineering", href: "/#dev" },
-        { name: "Cloud & DevOps Architecture", href: "/#devops" },
+        { name: "SaaS Product Ecosystem", href: "/services/saas" },
+        { name: "AI Agentic Automations", href: "/services/ai" },
+        { name: "Custom Full-Stack Engineering", href: "/services/dev" },
+        { name: "Cloud & DevOps Architecture", href: "/services/devops" },
       ],
     },
     {
       name: "Solutions",
       items: [
         { name: "Workforce HRMS & Payroll", href: "/hrms" },
-        { name: "AI-Powered Automation", href: "/#ai" },
-        { name: "High-Concurrency Systems", href: "/#dev" },
-        { name: "Compliance & Auditing", href: "/#faq" },
+        { name: "AI-Powered Automation", href: "/solutions/ai" },
+        { name: "High-Concurrency Systems", href: "/solutions/concurrency" },
+        { name: "Compliance & Auditing", href: "/solutions/compliance" },
       ],
     },
     { name: "Use Cases", href: "/#case-studies" },
@@ -120,7 +120,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-64 rounded-2xl bg-[#061d23] border border-brand-teal/25 p-3 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
                 <div className="flex flex-col gap-1">
                   <a
-                    href="/#saas"
+                    href="/services/saas"
                     className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
@@ -131,7 +131,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                     </span>
                   </a>
                   <a
-                    href="/#ai"
+                    href="/services/ai"
                     className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
@@ -142,7 +142,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                     </span>
                   </a>
                   <a
-                    href="/#dev"
+                    href="/services/dev"
                     className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
@@ -153,7 +153,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                     </span>
                   </a>
                   <a
-                    href="/#devops"
+                    href="/services/devops"
                     className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
@@ -195,7 +195,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                     </span>
                   </a>
                   <a
-                    href="/#ai"
+                    href="/solutions/ai"
                     className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
@@ -206,7 +206,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                     </span>
                   </a>
                   <a
-                    href="/#dev"
+                    href="/solutions/concurrency"
                     className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
@@ -217,7 +217,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                     </span>
                   </a>
                   <a
-                    href="/#faq"
+                    href="/solutions/compliance"
                     className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">

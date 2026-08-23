@@ -7,14 +7,13 @@ export default function Services() {
     {
       id: "saas",
       title: "SaaS Product Ecosystem",
-      subtitle: "Enterprise HRMS & Automated Payroll",
+      subtitle: "Enterprise HRMS & Payroll",
       description:
-        "Engineered for high-scale workforce operations. Our modular SaaS suite automates complex multi-state payroll, taxes, employee lifecycle compliance, and dynamic benefits management in real-time.",
+        "High-scale modular SaaS automating payroll, compliance, and workforce operations in real-time.",
       features: [
         "Automated Tax Compliance",
         "Direct Deposit Pipelines",
-        "Granular Role-Based Access Control",
-        "Flexible Modular HR Modules",
+        "Granular Access Control",
       ],
       icon: (
         <svg className="w-8 h-8 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -32,11 +31,10 @@ export default function Services() {
       title: "AI Agentic Automations",
       subtitle: "Intelligent Workflows & LLMs",
       description:
-        "Deploying self-healing autonomous AI agents, fine-tuned LLMs, and semantic search (RAG) pipelines. We automate payroll reconciliation, smart roster compliance, and intelligent corporate knowledge retrieval.",
+        "Autonomous AI agents, fine-tuned LLMs, and semantic RAG pipelines auditing payroll operations.",
       features: [
-        "Autonomous AI Audit Agents",
-        "Retrieval Augmented Generation (RAG)",
-        "Automated Compliance Checks",
+        "Autonomous Audit Agents",
+        "Semantic Search RAG",
         "Self-Healing Operations",
       ],
       icon: (
@@ -50,13 +48,12 @@ export default function Services() {
     {
       id: "dev",
       title: "Custom Full-Stack Engineering",
-      subtitle: "High-Concurrency Architectures",
+      subtitle: "High-Concurrency Backend",
       description:
-        "High-performance backends built on robust microservices matrices. We design API gateways, stream processing pipelines, and state databases to manage millions of concurrent user transactions.",
+        "High-performance backends, low-latency API gateways, and stream pipelines built for scale.",
       features: [
         "Distributed Microservices",
-        "Sub-Millisecond API Gateways",
-        "High-Availability Databases",
+        "Sub-Millisecond Gateways",
         "Real-Time Stream Processing",
       ],
       icon: (
@@ -70,14 +67,13 @@ export default function Services() {
     {
       id: "devops",
       title: "Cloud & DevOps Architecture",
-      subtitle: "High-Availability CI/CD Pipelines",
+      subtitle: "High-Availability Pipelines",
       description:
-        "Automated cloud infrastructure tailored for strict compliance and continuous delivery. We scale with Kubernetes clusters, infrastructure-as-code, and isolated VPC networks.",
+        "Secure cloud infrastructure with automated Kubernetes, CI/CD, and SOC2/GDPR compliance.",
       features: [
-        "Infrastructure as Code (Terraform)",
-        "Zero-Downtime CI/CD Blueprints",
-        "Kubernetes & Docker Clusters",
-        "SOC2/GDPR Compliant Firewalls",
+        "Infrastructure as Code",
+        "Zero-Downtime Blueprints",
+        "Kubernetes Scale Clusters",
       ],
       icon: (
         <svg className="w-8 h-8 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -107,11 +103,14 @@ export default function Services() {
               Our Core Technical Services
             </h2>
             <p className="text-slate-400 mt-4 leading-relaxed font-sans">
-              We deliver enterprise-grade performance through three core specialized tracks. 
+              We deliver enterprise-grade performance through specialized tracks. 
               Discover how we architect for speed, compliance, and modular scale.
             </p>
           </div>
-          <div className="text-sm font-semibold text-brand-teal flex items-center gap-2 hover:text-brand-cyan transition-colors cursor-pointer group">
+          <a
+            href="/services"
+            className="text-sm font-semibold text-brand-teal flex items-center gap-2 hover:text-brand-cyan transition-colors cursor-pointer group"
+          >
             Explore All Features
             <svg
               className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
@@ -122,7 +121,7 @@ export default function Services() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </div>
+          </a>
         </div>
 
         {/* 4-Column Responsive Grid */}
@@ -131,7 +130,7 @@ export default function Services() {
             <div
               key={card.title}
               id={card.id}
-              className="bg-brand-dark-gray/30 text-slate-200 border border-brand-dark-gray/80 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-brand-teal/10 hover:border-brand-teal/40 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden group flex flex-col justify-between border-b-4 border-b-transparent hover:border-b-brand-teal"
+              className="bg-brand-dark-gray/30 text-slate-200 border border-brand-dark-gray/80 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-brand-teal/10 hover:border-brand-teal/40 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden group flex flex-col justify-between border-b-4 border-b-transparent hover:border-b-brand-teal min-h-[480px]"
             >
               {/* Card Inner Content */}
               <div>
@@ -175,7 +174,10 @@ export default function Services() {
               </div>
 
               {/* Bottom Interactive Arrow Link */}
-              <div className="border-t border-brand-dark-gray/50 pt-5 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-brand-teal transition-all duration-300 cursor-pointer">
+              <a
+                href={`/services/${card.id}`}
+                className="border-t border-brand-dark-gray/50 pt-5 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-brand-teal transition-all duration-300 cursor-pointer"
+              >
                 <span>View Engineering Specs</span>
                 <svg
                   className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300"
@@ -186,7 +188,7 @@ export default function Services() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </div>
+              </a>
             </div>
           ))}
         </div>

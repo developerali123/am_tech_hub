@@ -219,3 +219,12 @@ html {
   scroll-margin-top: 96px; /* equivalent to scroll-mt-24 */
 }
 
+@utility animate-infinite-scroll {
+  animation: infinite-scroll 25s linear infinite;
+}
+
+@keyframes infinite-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}
+

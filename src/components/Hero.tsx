@@ -196,62 +196,16 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           We architect mission-critical infrastructure to power high-concurrency environments.
         </p>
 
-        {/* Double CTAs */}
+        {/* Single CTA */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 w-full justify-center items-center">
           <a
-            href="#contact"
+            href="#services"
             className="w-full sm:w-auto px-8 py-4 text-sm font-bold text-brand-midnight rounded-full bg-gradient-to-r from-brand-teal to-brand-cyan hover:shadow-xl hover:shadow-brand-teal/25 hover:scale-[1.02] active:scale-100 transition-all duration-300 text-center font-sans"
           >
             Explore Our Platforms
           </a>
-          <a
-            href="#contact"
-            className="w-full sm:w-auto px-8 py-4 text-sm font-bold text-white rounded-full border border-slate-700 bg-brand-dark-gray/30 hover:border-brand-teal/50 hover:bg-brand-dark-gray/60 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] active:scale-100 text-center font-sans"
-          >
-            Talk to an Architect
-          </a>
         </div>
 
-        {/* Tech Stack quick icons showcase */}
-        <div className="mt-16 flex flex-col items-center gap-4">
-          <p className="text-xs uppercase tracking-widest text-slate-500 font-bold font-sans">
-            Architected with modern industry standards
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 opacity-50 grayscale hover:opacity-80 hover:grayscale-0 transition-all duration-300">
-            {/* React Icon */}
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(30 12 12)" />
-                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(90 12 12)" />
-                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(150 12 12)" />
-                <circle cx="12" cy="12" r="1" />
-              </svg>
-              <span className="text-sm font-semibold text-slate-300 font-sans">React / Next.js</span>
-            </div>
-            {/* TS Icon */}
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-black px-1.5 py-0.5 rounded bg-slate-400 text-brand-midnight font-sans">TS</span>
-              <span className="text-sm font-semibold text-slate-300 font-sans">TypeScript</span>
-            </div>
-            {/* Microservices Node.js icon */}
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="3" width="7" height="9" />
-                <rect x="14" y="3" width="7" height="5" />
-                <rect x="14" y="12" width="7" height="9" />
-                <rect x="3" y="16" width="7" height="5" />
-              </svg>
-              <span className="text-sm font-semibold text-slate-300 font-sans">Microservices</span>
-            </div>
-            {/* AWS/Cloud Icon */}
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M17.5 19A3.5 3.5 0 0 0 21 15.5c0-2.79-2.54-4.5-5-4.5-.42-1.89-1.89-3.5-4-3.5-3 0-5 2.5-5 5.5A4.5 4.5 0 0 0 7.5 22h10z" />
-              </svg>
-              <span className="text-sm font-semibold text-slate-300 font-sans">AWS & Kubernetes</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
