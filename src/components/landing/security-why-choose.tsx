@@ -71,7 +71,7 @@ const SECURITY_ITEMS = [
 
 export function SecurityWhyChoose() {
   return (
-    <section className="py-20 md:py-28 bg-muted/5 relative overflow-hidden">
+    <section id="security" className="py-20 md:py-28 bg-muted/5 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         {/* Why Choose Us */}
         <div className="mb-20">

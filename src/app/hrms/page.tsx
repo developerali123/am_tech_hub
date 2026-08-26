@@ -35,63 +35,63 @@ export default function HRMSPage() {
         <ScrollReveal delayMs={100}>
           <Hero onOpenDemo={openDemo} />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <TrustedBy />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <ProblemSolution />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <Features />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <PlatformHighlights />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <ApprovalWorkflow />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <PayrollSection />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <SelfService />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <Reports />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <SmartData />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <ProductivityTable />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <SecurityWhyChoose />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <Testimonials />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <Pricing />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <Faq />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <QuickStats />
         </ScrollReveal>

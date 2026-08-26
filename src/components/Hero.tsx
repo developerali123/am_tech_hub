@@ -173,7 +173,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-teal/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[400px] h-[400px] bg-brand-cyan/10 rounded-full blur-[130px] pointer-events-none z-0"></div>
 
-      <div className="max-w-5xl mx-auto px-6 md:px-8 relative z-10 text-center flex flex-col items-center gap-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 text-center flex flex-col items-center gap-8">
         {/* Dynamic Badge */}
         <div className="inline-flex items-center gap-2.5 px-4.5 py-1.5 rounded-full border border-brand-teal/20 bg-brand-dark-gray/60 backdrop-blur-md animate-fade-in hover:border-brand-teal/50 transition-colors">
           <span className="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>

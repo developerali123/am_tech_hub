@@ -18,38 +18,28 @@ export default function Footer() {
 
   const footerLinks = [
     {
-      title: "SaaS Platforms",
+      title: "Services",
+      links: [
+        { name: "SaaS Products", href: "/services/saas" },
+        { name: "AI Automations", href: "/services/ai" },
+        { name: "Custom Dev", href: "/services/dev" },
+        { name: "Cloud & DevOps", href: "/services/devops" },
+      ],
+    },
+    {
+      title: "Solutions",
       links: [
         { name: "Enterprise HRMS", href: "/hrms" },
         { name: "Automated Payroll", href: "/hrms#payroll" },
-        { name: "Modular CRM", href: "/hrms#features" },
-        { name: "Security & Access", href: "/hrms#security" },
-      ],
-    },
-    {
-      title: "Custom Dev",
-      links: [
-        { name: "Full-Stack Dev", href: "/#dev" },
-        { name: "AI Automations", href: "/#ai" },
-        { name: "High-Concurrency", href: "/#dev" },
-        { name: "DevOps & CI/CD", href: "/#devops" },
-      ],
-    },
-    {
-      title: "Industries",
-      links: [
-        { name: "FinTech & Banking", href: "/#industries" },
-        { name: "Logistics & Supply", href: "/#industries" },
-        { name: "Healthcare Systems", href: "/#industries" },
-        { name: "B2B SaaS Scaleups", href: "/#industries" },
+        { name: "Self-Service portal", href: "/hrms#selfservice" },
+        { name: "Support Mesh", href: "/hrms#support" },
       ],
     },
     {
       title: "Company",
       links: [
-        { name: "About Us", href: "/about" },
-        { name: "Careers", href: "/about#careers" },
-        { name: "Technical Blog", href: "/about#blog" },
+        { name: "Careers", href: "/careers" },
+        { name: "Technical Blog", href: "/blog" },
         { name: "Contact Hub", href: "/#contact" },
       ],
     },
@@ -60,7 +50,7 @@ export default function Footer() {
       {/* Background radial glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-teal/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-8xl mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-12 lg:gap-8 pb-16 border-b border-brand-dark-gray/30">
           {/* Brand Info */}
           <div className="lg:col-span-2 flex flex-col gap-6">
@@ -112,7 +102,7 @@ export default function Footer() {
           </div>
 
           {/* Links Columns */}
-          <div className="lg:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="lg:col-span-4 grid grid-cols-1 md:grid-cols-3 gap-8">
             {footerLinks.map((section) => (
               <div key={section.title} className="flex flex-col gap-5">
                 <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-200">
@@ -176,13 +166,13 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} AM Tech Hub. All rights reserved.
           </div>
           <div className="flex gap-6">
-            <a href="/about#privacy" className="hover:text-brand-teal transition-colors">
+            <a href="/privacy" className="hover:text-brand-teal transition-colors">
               Privacy Policy
             </a>
-            <a href="/about#terms" className="hover:text-brand-teal transition-colors">
+            <a href="/terms" className="hover:text-brand-teal transition-colors">
               Terms of Service
             </a>
-            <a href="/about#security" className="hover:text-brand-teal transition-colors">
+            <a href="/security" className="hover:text-brand-teal transition-colors">
               Security Compliance
             </a>
           </div>

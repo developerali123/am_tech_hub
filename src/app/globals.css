@@ -11,7 +11,7 @@
   --color-brand-teal: #00e1d9;
   --color-brand-cyan: #00f2fe;
   --color-brand-dark-gray: #0e2229;
-  
+
   --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   /* HRMS & Shadcn UI themes */
@@ -146,7 +146,7 @@ body {
 /* Custom background matrix grid overlay */
 .bg-grid-lines {
   background-size: 50px 50px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(0, 225, 217, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 225, 217, 0.03) 1px, transparent 1px);
 }
@@ -163,13 +163,16 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #03141a;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #0e2229;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #00e1d9;
 }
@@ -188,24 +191,45 @@ body {
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0px) rotate(0.5deg); }
-  50% { transform: translateY(-12px) rotate(-0.5deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0.5deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(-0.5deg);
+  }
 }
 
 @keyframes float-medium {
-  0%, 100% { transform: translateY(0px) rotate(-0.5deg); }
-  50% { transform: translateY(-9px) rotate(0.5deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-0.5deg);
+  }
+
+  50% {
+    transform: translateY(-9px) rotate(0.5deg);
+  }
 }
 
 @keyframes float-fast {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(-1deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(-1deg);
+  }
 }
 
 /* Subtle grid mesh background pattern */
 @utility bg-grid-pattern {
   background-size: 40px 40px;
-  background-image: 
+  background-image:
     linear-gradient(to right, var(--border) 1px, transparent 1px),
     linear-gradient(to bottom, var(--border) 1px, transparent 1px);
 }
@@ -215,8 +239,17 @@ html {
   scroll-behavior: smooth;
 }
 
-#about, #saas, #dev, #ai, #devops, #case-studies, #testimonials, #faq, #contact {
-  scroll-margin-top: 96px; /* equivalent to scroll-mt-24 */
+#about,
+#saas,
+#dev,
+#ai,
+#devops,
+#case-studies,
+#testimonials,
+#faq,
+#contact {
+  scroll-margin-top: 96px;
+  /* equivalent to scroll-mt-24 */
 }
 
 @utility animate-infinite-scroll {
@@ -224,7 +257,117 @@ html {
 }
 
 @keyframes infinite-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.3333%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
+/* Light mode overrides for the main site pages */
+html.light body {
+  background-color: #f8fafc;
+  background-image: radial-gradient(circle at 50% 0%, #ffffff 0%, #f1f5f9 100%);
+  color: #0f172a;
+}
+
+html.light .bg-grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(0, 225, 217, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 225, 217, 0.08) 1px, transparent 1px);
+}
+
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light p,
+html.light .text-slate-300,
+html.light .text-slate-400 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-100 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-200 {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Sections & Panels - clean HTML tag/class overrides to avoid bracket class escapes */
+html.light .bg-brand-midnight-dark,
+html.light .bg-brand-midnight,
+html.light footer {
+  background-color: #f1f5f9 !important;
+  background-image: none !important;
+}
+
+html.light .bg-brand-dark-gray\/50,
+html.light .bg-brand-dark-gray\/30,
+html.light .bg-brand-dark-gray\/25,
+html.light .bg-brand-midnight\/50,
+html.light .bg-brand-midnight\/60,
+html.light .bg-brand-dark-gray\/20 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(0, 225, 217, 0.2) !important;
+  color: #1e293b !important;
+}
+
+html.light .border-brand-dark-gray\/40,
+html.light .border-brand-dark-gray\/30,
+html.light .border-brand-dark-gray\/50,
+html.light .border-brand-dark-gray\/60,
+html.light .border-brand-dark-gray\/80,
+html.light .border-brand-teal\/10,
+html.light .border-brand-teal\/20 {
+  border-color: rgba(148, 163, 184, 0.3) !important;
+}
+
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+  border-color: #00e1d9 !important;
+}
+
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(0, 225, 217, 0.2) !important;
+}
+
+html.light .text-slate-300:hover,
+html.light .text-slate-200:hover {
+  color: #008f8a !important;
+}
+
+html.light .border-brand-teal\/40 {
+  border-color: rgba(0, 225, 217, 0.8) !important;
+}
+
+html.light .border-brand-cyan\/40 {
+  border-color: rgba(0, 242, 254, 0.8) !important;
+}
+
+html.light pre {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}

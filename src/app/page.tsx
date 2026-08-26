@@ -53,37 +53,37 @@ export default function Home() {
 
         {/* Brand Showcase Partner / Trust Bar */}
         <section className="py-10 border-y border-brand-dark-gray/40 bg-brand-midnight-dark/50 relative z-10 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 md:px-8 text-center flex flex-col gap-6">
+          <div className="max-w-8xl mx-auto px-4 md:px-6 text-center flex flex-col gap-6">
             <p className="text-xs uppercase tracking-widest text-slate-500 font-bold font-sans">
               Powering transaction pipelines for leading institutions
             </p>
             
             {/* Continuous Horizontal Ticker */}
             <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-              <div className="flex w-[300%] gap-16 items-center justify-between opacity-35 hover:opacity-65 transition-opacity duration-300 animate-infinite-scroll whitespace-nowrap">
+              <div className="flex w-max opacity-35 hover:opacity-65 transition-opacity duration-300 animate-infinite-scroll">
                 {/* 1st copy */}
-                <div className="flex items-center gap-16 min-w-full justify-around shrink-0">
-                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-1">
+                <div className="flex items-center gap-16 shrink-0 pr-16">
+                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-2">
                     <svg className="w-5 h-5 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                     </svg>
                     APEX_LEDGER
                   </div>
-                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-1">
+                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-2">
                     <svg className="w-5 h-5 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <rect x="3" y="3" width="18" height="18" rx="2" />
                       <path d="M9 17V7l7 5-7 5z" />
                     </svg>
                     NEXUS_SYSTEMS
                   </div>
-                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-1">
+                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-2">
                     <svg className="w-5 h-5 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <circle cx="12" cy="12" r="10" />
                       <path d="M8 12h8M12 8v8" />
                     </svg>
                     VERIFY_FLOW
                   </div>
-                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-1">
+                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-2">
                     <svg className="w-5 h-5 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5" />
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
@@ -93,59 +93,28 @@ export default function Home() {
                 </div>
 
                 {/* 2nd copy */}
-                <div className="flex items-center gap-16 min-w-full justify-around shrink-0" aria-hidden="true">
-                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-1">
+                <div className="flex items-center gap-16 shrink-0 pr-16" aria-hidden="true">
+                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-2">
                     <svg className="w-5 h-5 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                     </svg>
                     APEX_LEDGER
                   </div>
-                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-1">
+                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-2">
                     <svg className="w-5 h-5 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <rect x="3" y="3" width="18" height="18" rx="2" />
                       <path d="M9 17V7l7 5-7 5z" />
                     </svg>
                     NEXUS_SYSTEMS
                   </div>
-                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-1">
+                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-2">
                     <svg className="w-5 h-5 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <circle cx="12" cy="12" r="10" />
                       <path d="M8 12h8M12 8v8" />
                     </svg>
                     VERIFY_FLOW
                   </div>
-                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-1">
-                    <svg className="w-5 h-5 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5" />
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-                    </svg>
-                    HR_SYNAPSE
-                  </div>
-                </div>
-
-                {/* 3rd copy */}
-                <div className="flex items-center gap-16 min-w-full justify-around shrink-0" aria-hidden="true">
-                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-1">
-                    <svg className="w-5 h-5 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                    </svg>
-                    APEX_LEDGER
-                  </div>
-                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-1">
-                    <svg className="w-5 h-5 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <path d="M9 17V7l7 5-7 5z" />
-                    </svg>
-                    NEXUS_SYSTEMS
-                  </div>
-                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-1">
-                    <svg className="w-5 h-5 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M8 12h8M12 8v8" />
-                    </svg>
-                    VERIFY_FLOW
-                  </div>
-                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-1">
+                  <div className="text-sm font-extrabold tracking-tight text-white flex items-center gap-2">
                     <svg className="w-5 h-5 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5" />
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
@@ -155,6 +124,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
           </div>
         </section>
 

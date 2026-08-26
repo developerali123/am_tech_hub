@@ -36,7 +36,7 @@ export default function ROICalculator() {
       {/* Background radial cyan glow */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-brand-cyan/5 rounded-full blur-[110px] pointer-events-none"></div>
 
-      <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-8xl mx-auto px-4 md:px-6 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

@@ -142,7 +142,7 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
       {/* Visual background accents */}
       <div className={`absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 ${isHRMS ? 'bg-primary/5' : 'bg-brand-cyan/5'} rounded-full blur-[110px] pointer-events-none`}></div>
 
-      <div className="container mx-auto px-6 md:px-8 max-w-7xl relative z-10">
+      <div className="container mx-auto px-4 md:px-6 max-w-8xl relative z-10">
         
         {/* Header Block */}
         <div className="max-w-3xl mb-16">

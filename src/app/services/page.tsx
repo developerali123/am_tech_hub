@@ -116,7 +116,7 @@ export default function ServicesPage() {
 
       {/* Main Page Layout */}
       <main className="flex-grow z-10 pt-32 pb-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="max-w-8xl mx-auto px-4 md:px-6">
           
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-20">

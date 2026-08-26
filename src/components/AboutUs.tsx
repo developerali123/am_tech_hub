@@ -45,7 +45,7 @@ export default function AboutUs() {
       <div className="absolute top-1/3 right-0 w-[450px] h-[450px] bg-brand-teal/5 rounded-full blur-[130px] pointer-events-none z-0"></div>
       <div className="absolute bottom-0 left-10 w-[300px] h-[300px] bg-brand-cyan/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-8xl mx-auto px-4 md:px-6 relative z-10">
         
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-20">

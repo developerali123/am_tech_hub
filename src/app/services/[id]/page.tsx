@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import DemoModal from "@/components/DemoModal";
+import ContactUs from "@/components/ContactUs";
 import ScrollToTop from "@/components/ScrollToTop";
 
 // Data mapping for services
@@ -115,11 +115,7 @@ const SERVICES_DATA: Record<string, {
 export default function ServiceDetailPage() {
   const params = useParams();
   const router = useRouter();
-  const [isDemoOpen, setIsDemoOpen] = useState(false);
   const [activeFaqIdx, setActiveFaqIdx] = useState<number | null>(null);
-
-  const openDemo = () => setIsDemoOpen(true);
-  const closeDemo = () => setIsDemoOpen(false);
 
   const serviceId = params?.id as string;
   const data = SERVICES_DATA[serviceId];
@@ -128,7 +124,7 @@ export default function ServiceDetailPage() {
   if (!data) {
     return (
       <div className="relative min-h-screen bg-brand-gradient text-slate-100 flex flex-col justify-between overflow-x-hidden bg-grid-lines">
-        <Navbar onOpenDemo={openDemo} />
+        <Navbar onOpenDemo={() => {}} />
         <main className="flex-grow z-10 pt-40 pb-24 text-center">
           <div className="max-w-md mx-auto px-6">
             <h1 className="text-3xl font-extrabold text-white mb-4">Service Not Found</h1>
@@ -153,11 +149,11 @@ export default function ServiceDetailPage() {
       <div className="absolute bottom-[20%] left-0 w-[450px] h-[450px] bg-brand-cyan/5 rounded-full blur-[110px] pointer-events-none z-0"></div>
 
       {/* Navigation */}
-      <Navbar onOpenDemo={openDemo} />
+      <Navbar onOpenDemo={() => {}} />
 
       {/* Main Page Layout */}
       <main className="flex-grow z-10 pt-32 pb-24">
-        <div className="max-w-6xl mx-auto px-6 md:px-8">
+        <div className="max-w-8xl mx-auto px-4 md:px-6">
           
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs font-bold text-slate-400 mb-8 font-sans">
@@ -186,17 +182,11 @@ export default function ServiceDetailPage() {
               </p>
               
               <div className="pt-4 flex flex-wrap gap-4">
-                <button
-                  onClick={openDemo}
-                  className="px-8 py-3.5 text-xs font-bold text-brand-midnight rounded-full bg-gradient-to-r from-brand-teal to-brand-cyan hover:shadow-xl hover:shadow-brand-teal/25 hover:scale-[1.02] active:scale-100 transition-all duration-300 font-sans"
+                <a
+                  href="#contact"
+                  className="px-8 py-3.5 text-xs font-bold text-brand-midnight rounded-full bg-gradient-to-r from-brand-teal to-brand-cyan hover:shadow-xl hover:shadow-brand-teal/25 hover:scale-[1.02] active:scale-100 transition-all duration-300 font-sans text-center"
                 >
                   Consult an Architect
-                </button>
-                <a
-                  href="/#contact"
-                  className="px-8 py-3.5 text-xs font-bold text-white rounded-full border border-slate-700 bg-brand-dark-gray/30 hover:border-brand-teal/50 hover:bg-brand-dark-gray/60 transition-all duration-300 text-center font-sans"
-                >
-                  View Deployment Flow
                 </a>
               </div>
             </div>
@@ -340,19 +330,19 @@ export default function ServiceDetailPage() {
                 );
               })}
             </div>
-          </div>
+            <div id="contact" className="border-t border-brand-dark-gray/50 pt-16 mt-16 scroll-mt-24">
+              <ContactUs />
+            </div>
 
+          </div>
         </div>
       </main>
 
-      {/* Footer */}
-      <Footer />
+        {/* Footer */}
+        <Footer />
 
-      {/* Interactive Contact & Demo Booking Modal */}
-      <DemoModal isOpen={isDemoOpen} onClose={closeDemo} />
-
-      {/* Floating Scroll to Top Button */}
-      <ScrollToTop />
-    </div>
+        {/* Floating Scroll to Top Button */}
+        <ScrollToTop />
+      </div>
   );
 }

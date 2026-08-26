@@ -35,7 +35,7 @@ export default function Testimonials() {
       {/* Background glowing elements */}
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-brand-teal/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-8xl mx-auto px-4 md:px-6 relative z-10">
         
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-16">

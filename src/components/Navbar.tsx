@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 interface NavbarProps {
   onOpenDemo: () => void;
@@ -10,6 +11,12 @@ interface NavbarProps {
 export default function Navbar({ onOpenDemo }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,7 +65,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
           : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <div className="max-w-8xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
           <a href="/" className="flex items-center gap-3 group focus:outline-none">
@@ -268,8 +275,28 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
             </a>
           </nav>
 
-          {/* Desktop Call to Action */}
-          <div className="hidden md:block">
+          {/* Desktop Call to Action & Theme Toggle */}
+          <div className="hidden md:flex items-center gap-4">
+            {mounted ? (
+              <button
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+                className="p-2 rounded-full border border-slate-700 bg-brand-dark-gray/50 hover:bg-brand-dark-gray/80 text-slate-300 hover:text-brand-teal transition-colors cursor-pointer"
+                aria-label="Toggle theme"
+              >
+                {resolvedTheme === "dark" ? (
+                  <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M4.22 4.22l1.59 1.59m12.38 12.38l1.59 1.59M21 12h-2.25m-13.5 0H3m2.22 16.78l1.59-1.59m12.38-12.38l1.59-1.59M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
+                  </svg>
+                ) : (
+                  <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                  </svg>
+                )}
+              </button>
+            ) : (
+              <div className="w-[38px] h-[38px] rounded-full border border-slate-700 bg-brand-dark-gray/50" />
+            )}
+            
             <a
               href="/#contact"
               className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-semibold text-white rounded-full group bg-gradient-to-br from-brand-teal to-brand-cyan hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-brand-teal/50 shadow-lg shadow-brand-teal/15 hover:shadow-brand-teal/30 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
@@ -280,36 +307,44 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
             </a>
           </div>
 
-          {/* Mobile Menu Button (Hamburger) */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-brand-dark-gray/50 transition-colors focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+          {/* Mobile Theme Toggle & Menu Button */}
+          <div className="flex md:hidden items-center gap-3">
+            {mounted ? (
+              <button
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+                className="p-2 rounded-full border border-slate-700 bg-brand-dark-gray/50 hover:bg-brand-dark-gray/80 text-slate-300 hover:text-brand-teal transition-colors cursor-pointer"
+                aria-label="Toggle theme"
+              >
+                {resolvedTheme === "dark" ? (
+                  <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M4.22 4.22l1.59 1.59m12.38 12.38l1.59 1.59M21 12h-2.25m-13.5 0H3m2.22 16.78l1.59-1.59m12.38-12.38l1.59-1.59M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
+                  </svg>
+                ) : (
+                  <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                  </svg>
+                )}
+              </button>
+            ) : (
+              <div className="w-[34px] h-[34px] rounded-full border border-slate-700 bg-brand-dark-gray/50" />
+            )}
+
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-brand-dark-gray/50 transition-colors focus:outline-none"
+              aria-label="Toggle menu"
             >
               {isOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
               )}
-            </svg>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
 
