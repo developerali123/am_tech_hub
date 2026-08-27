@@ -307,6 +307,7 @@ html.light .text-slate-500 {
 
 /* Sections & Panels - clean HTML tag/class overrides to avoid bracket class escapes */
 html.light .bg-brand-midnight-dark,
+html.light .bg-brand-midnight-dark\/50,
 html.light .bg-brand-midnight,
 html.light footer {
   background-color: #f1f5f9 !important;
@@ -370,4 +371,67 @@ html.light pre {
   background-color: #f1f5f9 !important;
   color: #0f172a !important;
   border-color: #e2e8f0 !important;
+}
+
+/* Light Mode Contrast, Background, & Metric Contrast Overrides */
+html.light .bg-brand-dark-gray\/60,
+html.light .bg-brand-dark-gray\/40,
+html.light .bg-brand-midnight\/40,
+html.light .bg-brand-dark-gray\/80 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(0, 225, 217, 0.2) !important;
+  color: #1e293b !important;
+}
+
+html.light .text-brand-teal {
+  color: #008f8a !important;
+}
+
+html.light .text-brand-cyan {
+  color: #0284c7 !important;
+}
+
+html.light input[type="range"] {
+  background-color: #cbd5e1 !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Card Gradient Overrides for Product Spotlight & ROI Monthly Savings */
+html.light .from-brand-dark-gray\/80 {
+  background-image: linear-gradient(to right, #ffffff, #f1f5f9) !important;
+}
+
+html.light .from-\[\#07242c\] {
+  background-image: linear-gradient(to bottom right, #f0fdfa, #f1f5f9) !important;
+}
+
+html.light .border-brand-teal\/30 {
+  border-color: rgba(0, 225, 217, 0.3) !important;
+}
+
+/* Interactive simulated browser & dashboard preview */
+html.light .bg-\[\#07181f\]\/95 {
+  background-color: rgba(241, 245, 249, 0.95) !important;
+  border-color: rgba(148, 163, 184, 0.3) !important;
+}
+
+html.light .bg-\[\#03141a\] {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-\[\#01090d\] {
+  background-color: #01090d !important; /* Keep simulated terminal dark */
+}
+
+/* Maintain light neon colors inside the dark simulated terminal container */
+html.light .bg-\[\#01090d\] .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+html.light .bg-\[\#01090d\] .text-brand-teal {
+  color: #00e1d9 !important;
+}
+
+html.light .bg-\[\#01090d\] .text-brand-cyan {
+  color: #00f2fe !important;
 }

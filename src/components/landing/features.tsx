@@ -9,6 +9,7 @@ import {
   RiAwardLine,
   RiCheckboxCircleFill,
   RiGraduationCapLine,
+  RiBuildingLine,
 } from "@remixicon/react";
 
 const FEATURES_DATA = [
@@ -115,6 +116,21 @@ const FEATURES_DATA = [
       "Automatic Retraining Tickers",
       "Feedback & Review Forms",
       "Skills Matrix Telemetry Dashboard",
+    ],
+  },
+  {
+    title: "Multi-Company & Tenancy Support",
+    description: "Manage multiple legal entities, sister firms, or departments securely under a single account boundary with complete database isolation.",
+    icon: RiBuildingLine,
+    color: "from-cyan-500 to-blue-600",
+    glowColor: "rgba(6, 182, 212, 0.15)",
+    items: [
+      "Logical Database Schema Isolation",
+      "Company Entity Hierarchy Tree",
+      "Tenant-Specific Payroll Rules",
+      "Cross-Company Global Reporting",
+      "Role-Based Multi-Entity Access",
+      "Distinct Office Calendars & Holidays",
     ],
   },
 ];

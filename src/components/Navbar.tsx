@@ -124,11 +124,11 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-64 rounded-2xl bg-[#061d23] border border-brand-teal/25 p-3 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-64 rounded-2xl bg-white dark:bg-[#061d23] border border-slate-200 dark:border-brand-teal/25 p-3 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
                 <div className="flex flex-col gap-1">
                   <a
                     href="/services/saas"
-                    className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
+                    className="flex flex-col p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
                       SaaS Product Ecosystem
@@ -139,7 +139,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                   </a>
                   <a
                     href="/services/ai"
-                    className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
+                    className="flex flex-col p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
                       AI Agentic Automations
@@ -150,7 +150,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                   </a>
                   <a
                     href="/services/dev"
-                    className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
+                    className="flex flex-col p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
                       Custom Full-Stack Engineering
@@ -161,7 +161,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                   </a>
                   <a
                     href="/services/devops"
-                    className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
+                    className="flex flex-col p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
                       Cloud & DevOps Architecture
@@ -188,11 +188,11 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-64 rounded-2xl bg-[#061d23] border border-brand-teal/25 p-3 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-64 rounded-2xl bg-white dark:bg-[#061d23] border border-slate-200 dark:border-brand-teal/25 p-3 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
                 <div className="flex flex-col gap-1">
                   <a
                     href="/hrms"
-                    className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
+                    className="flex flex-col p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
                       Workforce HRMS & Payroll
@@ -203,7 +203,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                   </a>
                   <a
                     href="/solutions/ai"
-                    className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
+                    className="flex flex-col p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
                       AI-Powered Automation
@@ -214,7 +214,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                   </a>
                   <a
                     href="/solutions/concurrency"
-                    className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
+                    className="flex flex-col p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
                       High-Concurrency Systems
@@ -225,7 +225,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                   </a>
                   <a
                     href="/solutions/compliance"
-                    className="flex flex-col p-2.5 rounded-xl hover:bg-brand-dark-gray/50 transition-colors group/item"
+                    className="flex flex-col p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-brand-dark-gray/50 transition-colors group/item"
                   >
                     <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
                       Compliance & Auditing

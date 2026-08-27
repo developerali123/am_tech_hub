@@ -3,7 +3,7 @@
 const HIGHLIGHTS = [
   { number: "50+", suffix: "HR & Payroll Modules", desc: "Covers employee directory, work rotations, advanced loan rules, accounting ledgers, and appraisals." },
   { number: "100%", suffix: "Configurable Policies", desc: "No hardcoding. Tailor leave types, shift caps, tax brackets, and compliance settings from our rules engine." },
-  { number: "Unlimited", suffix: "Employees & Offices", desc: "Built on a multi-tenant enterprise infrastructure that scales seamlessly with your hiring sprints." },
+  { number: "Multi-Tenant", suffix: "Multi-Company Architecture", desc: "Isolate and administer distinct sister companies, branches, or client entities with secure logical database schema boundaries." },
   { number: "Multi-Level", suffix: "Approval Workflows", desc: "Custom chains of validation for leave, expenses, and payroll runs, routed straight to managers." },
 ];
 
