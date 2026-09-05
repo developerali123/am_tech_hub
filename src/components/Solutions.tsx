@@ -5,6 +5,27 @@ import React from "react";
 export default function Solutions() {
   const cards = [
     {
+      id: "pos",
+      title: "Commercial POS & Retail",
+      subtitle: "Counter, Stock & FBR Compliance",
+      description:
+        "Point of sale for retail and wholesale — barcode checkout, multi-branch stock transfers, customer credit khata, and FBR fiscal invoicing.",
+      features: [
+        "Fast Barcode & Split Payments",
+        "Wood Trading (CFT) & Variants",
+        "FBR Fiscal Path & Tax Engine",
+      ],
+      href: "/pos",
+      icon: (
+        <svg className="w-8 h-8 text-brand-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" />
+          <line x1="8" y1="21" x2="16" y2="21" />
+          <line x1="12" y1="17" x2="12" y2="21" />
+          <path d="M6 8h12M6 12h8" />
+        </svg>
+      ),
+    },
+    {
       id: "hrms",
       title: "Workforce HRMS & Payroll",
       subtitle: "Integrated Enterprise Operations",
@@ -111,8 +132,8 @@ export default function Solutions() {
           </div>
         </div>
 
-        {/* 4-Column Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cards.map((card) => (
             <div
               key={card.title}

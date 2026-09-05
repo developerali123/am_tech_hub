@@ -45,6 +45,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
     {
       name: "Solutions",
       items: [
+        { name: "Commercial POS & Retail", href: "/pos" },
         { name: "Workforce HRMS & Payroll", href: "/hrms" },
         { name: "AI-Powered Automation", href: "/solutions/ai" },
         { name: "High-Concurrency Systems", href: "/solutions/concurrency" },
@@ -190,6 +191,17 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
               </button>
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-64 rounded-2xl bg-white dark:bg-[#061d23] border border-slate-200 dark:border-brand-teal/25 p-3 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
                 <div className="flex flex-col gap-1">
+                  <a
+                    href="/pos"
+                    className="flex flex-col p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-brand-dark-gray/50 transition-colors group/item"
+                  >
+                    <span className="text-xs font-bold text-white group-hover/item:text-brand-teal transition-colors font-sans">
+                      Commercial POS & Retail
+                    </span>
+                    <span className="text-[10px] text-slate-400 mt-0.5 font-sans">
+                      Counter, stock & FBR fiscal invoicing
+                    </span>
+                  </a>
                   <a
                     href="/hrms"
                     className="flex flex-col p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-brand-dark-gray/50 transition-colors group/item"

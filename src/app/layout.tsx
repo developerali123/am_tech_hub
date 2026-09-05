@@ -10,13 +10,13 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AM Tech Hub | Enterprise B2B SaaS & Custom Software Engineering",
-  description: "AM Tech Hub engineers high-performance enterprise applications, automated Payroll & HRMS SaaS platforms, custom microservices backends, and cloud architectures at scale.",
-  keywords: ["Software Engineering", "SaaS Platform", "Enterprise HRMS", "Payroll Automation", "Cloud Architecture", "DevOps", "Custom Software", "High-Concurrency Backend"],
+  title: "AM Tech Hub | Enterprise SaaS, Commercial POS & Custom Engineering",
+  description: "AM Tech Hub engineers high-performance enterprise applications, Commercial POS retail systems, automated Payroll & HRMS SaaS platforms, and cloud architectures at scale.",
+  keywords: ["Software Engineering", "Commercial POS", "Point of Sale", "FBR Fiscal Invoicing", "Retail Inventory", "Enterprise HRMS", "Payroll Automation", "Cloud Architecture", "DevOps"],
   authors: [{ name: "AM Tech Hub" }],
   openGraph: {
-    title: "AM Tech Hub | Enterprise B2B SaaS & Custom Software Engineering",
-    description: "AM Tech Hub engineers high-performance enterprise applications, automated Payroll & HRMS SaaS platforms, custom microservices backends, and cloud architectures at scale.",
+    title: "AM Tech Hub | Enterprise SaaS, Commercial POS & Custom Engineering",
+    description: "AM Tech Hub engineers high-performance enterprise applications, Commercial POS retail systems, automated Payroll & HRMS SaaS platforms, and cloud architectures at scale.",
     url: "https://amtechhub.com",
     siteName: "AM Tech Hub",
     type: "website",

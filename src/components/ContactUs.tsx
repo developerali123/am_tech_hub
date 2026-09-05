@@ -314,6 +314,7 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                       className={selectClass}
                     >
+                      <option value="Commercial POS / Retail">Commercial POS / Retail Platform</option>
                       <option value="SaaS Platform Integration">SaaS Platform Integration (HRMS/Payroll)</option>
                       <option value="Custom Dev">Custom Full-Stack Dev</option>
                       <option value="DevOps Architecture">Cloud & DevOps Architecture</option>

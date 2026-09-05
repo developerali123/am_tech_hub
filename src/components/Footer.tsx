@@ -29,10 +29,11 @@ export default function Footer() {
     {
       title: "Solutions",
       links: [
+        { name: "Commercial POS", href: "/pos" },
         { name: "Enterprise HRMS", href: "/hrms" },
         { name: "Automated Payroll", href: "/hrms#payroll" },
-        { name: "Self-Service portal", href: "/hrms#selfservice" },
-        { name: "Support Mesh", href: "/hrms#support" },
+        { name: "FBR Fiscal Invoicing", href: "/pos#deep-features" },
+        { name: "Wood Trading (CFT)", href: "/pos#industry-packs" },
       ],
     },
     {
@@ -67,7 +68,7 @@ export default function Footer() {
               </span>
             </a>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-              Engineering high-performance enterprise applications, automated Payroll & HRMS SaaS platforms, and high-concurrency custom architectures.
+              Engineering high-performance enterprise applications, Commercial POS retail platforms, automated Payroll & HRMS SaaS suites, and high-concurrency custom architectures.
             </p>
             {/* Social Icons */}
             <div className="flex gap-4">
