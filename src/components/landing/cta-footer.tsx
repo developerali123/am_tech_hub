@@ -112,11 +112,37 @@ export function CtaFooter() {
 
         {/* Copy lines */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-muted-foreground/80">
-          <span>&copy; 2026 HRFlow Systems Inc. All rights reserved.</span>
+          <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+            <span>&copy; {new Date().getFullYear()} AM Tech Hub. All rights reserved.</span>
+            <a
+              href="https://websitelaunches.com/site/amtechhub.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center transition-transform duration-200 hover:scale-105"
+              title="Established online - Public launch record"
+            >
+              {/* Light mode: Deep slate dark badge for bold, crisp contrast on light surfaces */}
+              <img
+                src="https://websitelaunches.com/badge/amtechhub.online.svg?theme=dark"
+                alt="Established online - Public launch record"
+                width={255}
+                height={55}
+                className="h-[38px] w-auto object-contain dark:hidden rounded-lg shadow-sm border border-slate-300/80 hover:border-slate-400 transition-colors"
+              />
+              {/* Dark mode: Crisp light badge for high contrast on dark backgrounds */}
+              <img
+                src="https://websitelaunches.com/badge/amtechhub.online.svg"
+                alt="Established online - Public launch record"
+                width={255}
+                height={55}
+                className="h-[38px] w-auto object-contain hidden dark:block rounded-lg shadow-sm"
+              />
+            </a>
+          </div>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-foreground">Terms of Service</a>
-            <a href="#" className="hover:text-foreground">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground">Cookie Preference</a>
+            <a href="/terms" className="hover:text-foreground">Terms of Service</a>
+            <a href="/privacy" className="hover:text-foreground">Privacy Policy</a>
+            <a href="/security" className="hover:text-foreground">Security Compliance</a>
           </div>
         </div>
       </div>

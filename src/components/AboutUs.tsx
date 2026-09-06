@@ -88,8 +88,8 @@ export default function AboutUs() {
         {/* Dynamic Highlight Cards for Flagship Products */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Card 1: Commercial POS */}
-          <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-blue-50/90 via-white to-slate-50 dark:from-[#001f3f]/90 dark:to-brand-midnight border border-blue-200 dark:border-[#0074d9]/30 relative overflow-hidden group flex flex-col justify-between shadow-md dark:shadow-none">
-            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-500/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-blue-500/20 transition-all duration-500"></div>
+          <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-blue-50/90 via-white to-slate-50 dark:from-[#001f3f]/90 dark:via-[#001428] dark:to-brand-midnight border border-blue-200 dark:border-[#0074d9]/40 relative overflow-hidden group flex flex-col justify-between shadow-md dark:shadow-2xl dark:shadow-black/60">
+            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-500/10 dark:bg-blue-500/20 rounded-full blur-[80px] pointer-events-none group-hover:bg-blue-500/30 transition-all duration-500"></div>
             
             <div className="relative z-10">
               <span className="text-[10px] font-bold tracking-widest text-blue-700 dark:text-[#4da3ff] uppercase bg-blue-100/80 dark:bg-[#0074d9]/15 border border-blue-300/60 dark:border-[#0074d9]/30 px-3 py-1 rounded-full">
@@ -98,7 +98,7 @@ export default function AboutUs() {
               <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mt-4 font-sans">
                 Commercial POS & Fiscal Invoicing
               </h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed font-sans">
+              <p className="text-slate-600 dark:text-slate-300 text-sm mt-3 leading-relaxed font-sans">
                 Engineered for growing retail chains and wholesale yards. Fast barcode sales, multi-warehouse stock, customer credit khata, and FBR-ready fiscal reporting with optional Wood Trading (CFT) pack.
               </p>
             </div>
@@ -117,17 +117,17 @@ export default function AboutUs() {
           </div>
 
           {/* Card 2: Enterprise HRMS */}
-          <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-teal-50/90 via-white to-slate-50 dark:from-brand-dark-gray/90 dark:to-brand-midnight border border-teal-200 dark:border-brand-teal/20 relative overflow-hidden group flex flex-col justify-between shadow-md dark:shadow-none">
-            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-teal-500/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-teal-500/20 transition-all duration-500"></div>
+          <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-teal-50/90 via-white to-slate-50 dark:from-brand-dark-gray/90 dark:via-[#071c22] dark:to-brand-midnight border border-teal-200 dark:border-brand-teal/30 relative overflow-hidden group flex flex-col justify-between shadow-md dark:shadow-2xl dark:shadow-black/60">
+            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-teal-500/10 dark:bg-brand-teal/20 rounded-full blur-[80px] pointer-events-none group-hover:bg-teal-500/30 transition-all duration-500"></div>
             
             <div className="relative z-10">
-              <span className="text-[10px] font-bold tracking-widest text-teal-700 dark:text-brand-teal uppercase bg-teal-100/80 dark:bg-brand-teal/10 border border-teal-300/60 dark:border-brand-teal/20 px-3 py-1 rounded-full">
+              <span className="text-[10px] font-bold tracking-widest text-teal-700 dark:text-brand-teal uppercase bg-teal-100/80 dark:bg-brand-teal/10 border border-teal-300/60 dark:border-brand-teal/30 px-3 py-1 rounded-full">
                 Workforce Spotlight
               </span>
               <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mt-4 font-sans">
                 Enterprise HRMS & Automated Payroll
               </h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed font-sans">
+              <p className="text-slate-600 dark:text-slate-300 text-sm mt-3 leading-relaxed font-sans">
                 Looking for a custom workforce solution? We offer a completely integrated, audit-ready HRMS & Payroll system tailored specifically to solve your multi-state compliance, roster scheduling, and salary disbursement challenges.
               </p>
             </div>
