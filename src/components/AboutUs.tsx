@@ -88,17 +88,17 @@ export default function AboutUs() {
         {/* Dynamic Highlight Cards for Flagship Products */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Card 1: Commercial POS */}
-          <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-[#001f3f]/90 to-brand-midnight border border-[#0074d9]/30 relative overflow-hidden group flex flex-col justify-between">
-            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-[#0074d9]/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-[#0074d9]/20 transition-all duration-500"></div>
+          <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-blue-50/90 via-white to-slate-50 dark:from-[#001f3f]/90 dark:to-brand-midnight border border-blue-200 dark:border-[#0074d9]/30 relative overflow-hidden group flex flex-col justify-between shadow-md dark:shadow-none">
+            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-500/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-blue-500/20 transition-all duration-500"></div>
             
             <div className="relative z-10">
-              <span className="text-[10px] font-bold tracking-widest text-[#4da3ff] uppercase bg-[#0074d9]/15 border border-[#0074d9]/30 px-3 py-1 rounded-full">
+              <span className="text-[10px] font-bold tracking-widest text-blue-700 dark:text-[#4da3ff] uppercase bg-blue-100/80 dark:bg-[#0074d9]/15 border border-blue-300/60 dark:border-[#0074d9]/30 px-3 py-1 rounded-full">
                 Retail & Wholesale Spotlight
               </span>
-              <h3 className="text-2xl font-extrabold text-white mt-4 font-sans">
+              <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mt-4 font-sans">
                 Commercial POS & Fiscal Invoicing
               </h3>
-              <p className="text-slate-400 text-sm mt-3 leading-relaxed font-sans">
+              <p className="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed font-sans">
                 Engineered for growing retail chains and wholesale yards. Fast barcode sales, multi-warehouse stock, customer credit khata, and FBR-ready fiscal reporting with optional Wood Trading (CFT) pack.
               </p>
             </div>
@@ -106,30 +106,28 @@ export default function AboutUs() {
             <div className="mt-8 relative z-10">
               <a
                 href="/pos"
-                className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-semibold text-white rounded-full group bg-gradient-to-br from-[#0074d9] to-cyan-400 group-hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-[#0074d9]/50 shadow-lg shadow-[#0074d9]/20 hover:shadow-[#0074d9]/40 transition-all duration-300 transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center text-sm font-semibold rounded-full bg-[#0074d9] hover:bg-[#005bb5] text-white px-7 py-3.5 shadow-md shadow-blue-500/25 transition-all duration-200 transform hover:scale-105 cursor-pointer gap-2"
               >
-                <span className="relative px-7 py-3 transition-all ease-in duration-75 bg-brand-midnight rounded-full group-hover:bg-transparent flex items-center gap-2">
-                  Launch POS Simulator
-                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </span>
+                <span>Launch POS Simulator</span>
+                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </a>
             </div>
           </div>
 
           {/* Card 2: Enterprise HRMS */}
-          <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-brand-dark-gray/90 to-brand-midnight border border-brand-teal/20 relative overflow-hidden group flex flex-col justify-between">
-            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-teal/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-brand-teal/15 transition-all duration-500"></div>
+          <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-teal-50/90 via-white to-slate-50 dark:from-brand-dark-gray/90 dark:to-brand-midnight border border-teal-200 dark:border-brand-teal/20 relative overflow-hidden group flex flex-col justify-between shadow-md dark:shadow-none">
+            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-teal-500/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-teal-500/20 transition-all duration-500"></div>
             
             <div className="relative z-10">
-              <span className="text-[10px] font-bold tracking-widest text-brand-teal uppercase bg-brand-teal/10 px-3 py-1 rounded-full">
+              <span className="text-[10px] font-bold tracking-widest text-teal-700 dark:text-brand-teal uppercase bg-teal-100/80 dark:bg-brand-teal/10 border border-teal-300/60 dark:border-brand-teal/20 px-3 py-1 rounded-full">
                 Workforce Spotlight
               </span>
-              <h3 className="text-2xl font-extrabold text-white mt-4 font-sans">
+              <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mt-4 font-sans">
                 Enterprise HRMS & Automated Payroll
               </h3>
-              <p className="text-slate-400 text-sm mt-3 leading-relaxed font-sans">
+              <p className="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed font-sans">
                 Looking for a custom workforce solution? We offer a completely integrated, audit-ready HRMS & Payroll system tailored specifically to solve your multi-state compliance, roster scheduling, and salary disbursement challenges.
               </p>
             </div>
@@ -137,14 +135,12 @@ export default function AboutUs() {
             <div className="mt-8 relative z-10">
               <a
                 href="/hrms"
-                className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-semibold text-white rounded-full group bg-gradient-to-br from-brand-teal to-brand-cyan group-hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-brand-teal/50 shadow-lg shadow-brand-teal/15 hover:shadow-brand-teal/30 transition-all duration-300 transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center text-sm font-semibold rounded-full bg-teal-600 hover:bg-teal-700 text-white px-7 py-3.5 shadow-md shadow-teal-500/25 transition-all duration-200 transform hover:scale-105 cursor-pointer gap-2"
               >
-                <span className="relative px-7 py-3 transition-all ease-in duration-75 bg-brand-midnight rounded-full group-hover:bg-transparent flex items-center gap-2">
-                  Launch HRMS Demo
-                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </span>
+                <span>Launch HRMS Demo</span>
+                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </a>
             </div>
           </div>

@@ -166,7 +166,7 @@ export default function Home() {
                   FAQ & Compliance
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white font-sans">
+              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white font-sans">
                 Enterprise Standards & Inquiries
               </h2>
             </div>
@@ -177,17 +177,19 @@ export default function Home() {
                 return (
                   <div
                     key={idx}
-                    className={`rounded-2xl border transition-all duration-300 ${
-                      isOpen ? "bg-brand-dark-gray/50 border-brand-teal/40" : "bg-brand-dark-gray/30 border-brand-dark-gray/60 hover:border-brand-teal/20"
+                    className={`rounded-2xl border transition-all duration-300 shadow-xs ${
+                      isOpen
+                        ? "bg-white dark:bg-brand-dark-gray/50 border-brand-teal/80 dark:border-brand-teal/40 shadow-sm"
+                        : "bg-white/90 dark:bg-brand-dark-gray/30 border-slate-200/90 dark:border-brand-dark-gray/60 hover:border-brand-teal/40 dark:hover:border-brand-teal/20"
                     }`}
                   >
                     <button
                       onClick={() => setActiveFaq(isOpen ? null : idx)}
-                      className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold text-white focus:outline-none"
+                      className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white focus:outline-none cursor-pointer"
                     >
-                      <span className="font-sans text-base md:text-lg">{faq.q}</span>
+                      <span className="font-sans text-base md:text-lg text-slate-900 dark:text-white">{faq.q}</span>
                       <svg
-                        className={`w-5.5 h-5.5 text-slate-400 transition-transform duration-300 ${isOpen ? "rotate-180 text-brand-teal" : ""}`}
+                        className={`w-5.5 h-5.5 text-slate-500 dark:text-slate-400 transition-transform duration-300 ${isOpen ? "rotate-180 text-brand-teal dark:text-brand-teal" : ""}`}
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2.5"
@@ -198,10 +200,10 @@ export default function Home() {
                     </button>
                     <div
                       className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        isOpen ? "max-h-[300px] opacity-100 border-t border-brand-dark-gray/60" : "max-h-0 opacity-0 pointer-events-none"
+                        isOpen ? "max-h-[300px] opacity-100 border-t border-slate-200 dark:border-brand-dark-gray/60" : "max-h-0 opacity-0 pointer-events-none"
                       }`}
                     >
-                      <p className="p-6 text-sm text-slate-400 leading-relaxed font-sans">
+                      <p className="p-6 text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
                         {faq.a}
                       </p>
                     </div>

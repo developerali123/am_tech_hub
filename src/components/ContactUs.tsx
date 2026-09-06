@@ -4,13 +4,14 @@ import React, { useState } from "react";
 
 interface ContactUsProps {
   isHRMS?: boolean;
+  isPOS?: boolean;
 }
 
-export default function ContactUs({ isHRMS = false }: ContactUsProps) {
+export default function ContactUs({ isHRMS = false, isPOS = false }: ContactUsProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    projectType: isHRMS ? "SaaS Platform Integration" : "Custom Dev",
+    projectType: isPOS ? "Commercial POS / Retail" : isHRMS ? "SaaS Platform Integration" : "Custom Dev",
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -35,7 +36,7 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
         setFormData({
           name: "",
           email: "",
-          projectType: isHRMS ? "SaaS Platform Integration" : "Custom Dev",
+          projectType: isPOS ? "Commercial POS / Retail" : isHRMS ? "SaaS Platform Integration" : "Custom Dev",
           message: "",
         });
       } else {
@@ -53,94 +54,106 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
     }
   };
 
-  // Theme configuration based on location (HRMS Page vs Main Site)
-  const badgeBorder = isHRMS 
+  // Theme configuration based on location (POS vs HRMS Page vs Main Site)
+  const isLightAware = isHRMS || isPOS;
+
+  const badgeBorder = isPOS
+    ? "border-[#0074d9]/30 bg-[#0074d9]/10 text-[#0074d9] dark:text-[#4da3ff]"
+    : isHRMS 
     ? "border-primary/20 bg-primary/5 text-primary" 
     : "border-brand-teal/20 bg-brand-dark-gray/60 text-brand-teal";
   
-  const badgeText = isHRMS ? "text-primary" : "text-brand-teal";
+  const badgeText = isPOS ? "text-[#0074d9] dark:text-[#4da3ff]" : isHRMS ? "text-primary" : "text-brand-teal";
   
-  const gradientTitle = isHRMS 
+  const gradientTitle = isPOS
+    ? "bg-gradient-to-r from-[#0074d9] via-[#0284c7] to-cyan-500 bg-clip-text text-transparent"
+    : isHRMS 
     ? "bg-gradient-to-r from-primary via-violet-500 to-indigo-600 bg-clip-text text-transparent" 
     : "bg-gradient-to-r from-brand-teal to-brand-cyan bg-clip-text text-transparent";
   
-  const iconWrapper = isHRMS 
+  const iconWrapper = isPOS
+    ? "bg-[#0074d9]/10 border-[#0074d9]/30 text-[#0074d9] dark:text-[#4da3ff]"
+    : isHRMS 
     ? "bg-primary/10 border-primary/20 text-primary" 
     : "bg-brand-teal/10 border-brand-teal/20 text-brand-teal";
   
-  const submitButton = isHRMS 
+  const submitButton = isPOS
+    ? "bg-gradient-to-br from-[#0074d9] to-[#005bb5] shadow-[#0074d9]/25 hover:shadow-[#0074d9]/40 focus:ring-[#0074d9]/50"
+    : isHRMS 
     ? "bg-gradient-to-br from-primary to-violet-600 shadow-primary/15 hover:shadow-primary/30 focus:ring-primary/50" 
     : "bg-gradient-to-br from-brand-teal to-brand-cyan shadow-brand-teal/15 hover:shadow-brand-teal/30 focus:ring-brand-teal/50";
 
   // Dynamic Layout Theme Classes
-  const sectionClass = isHRMS 
-    ? "py-24 relative overflow-hidden bg-muted/10 border-t border-border/40 bg-grid-pattern" 
+  const sectionClass = isLightAware 
+    ? "py-24 relative overflow-hidden bg-background border-t border-border bg-grid-pattern transition-colors duration-300" 
     : "py-24 relative overflow-hidden bg-brand-midnight-dark border-t border-brand-dark-gray/30 bg-grid-lines";
 
-  const sectionTitleClass = isHRMS 
+  const sectionTitleClass = isLightAware 
     ? "text-3xl md:text-5xl font-extrabold tracking-tight text-foreground font-sans" 
     : "text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans";
 
-  const sectionDescClass = isHRMS 
+  const sectionDescClass = isLightAware 
     ? "text-muted-foreground mt-4 leading-relaxed font-sans text-sm md:text-base" 
     : "text-slate-400 mt-4 leading-relaxed font-sans text-sm md:text-base";
 
-  const cardClass = isHRMS 
+  const cardClass = isLightAware 
     ? "p-8 rounded-3xl bg-card border border-border flex flex-col justify-between h-full relative overflow-hidden shadow-sm" 
-    : "p-8 rounded-3xl bg-brand-dark-gray/30 border border-brand-dark-gray/80 flex flex-col justify-between h-full relative overflow-hidden shadow-xl";
+    : "p-8 rounded-3xl bg-white dark:bg-brand-dark-gray/30 border border-slate-200 dark:border-brand-dark-gray/80 flex flex-col justify-between h-full relative overflow-hidden shadow-sm dark:shadow-xl";
 
-  const cardTitleClass = isHRMS 
+  const cardTitleClass = isLightAware 
     ? "text-lg font-bold text-foreground font-sans" 
-    : "text-lg font-bold text-white font-sans";
+    : "text-lg font-bold text-slate-900 dark:text-white font-sans";
 
-  const cardDescClass = isHRMS 
+  const cardDescClass = isLightAware 
     ? "text-xs text-muted-foreground mt-1 leading-relaxed" 
-    : "text-xs text-slate-400 mt-1 leading-relaxed";
+    : "text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed";
 
-  const labelClass = isHRMS 
+  const labelClass = isLightAware 
     ? "text-[10px] font-bold text-muted-foreground uppercase tracking-widest" 
-    : "text-[10px] font-bold text-slate-500 uppercase tracking-widest";
+    : "text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest";
 
-  const linkLabelClass = isHRMS 
+  const linkLabelClass = isPOS
+    ? "text-sm font-semibold text-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+    : isHRMS 
     ? "text-sm font-semibold text-foreground hover:text-primary transition-colors" 
-    : "text-sm font-semibold text-white hover:text-brand-teal transition-colors";
+    : "text-sm font-semibold text-slate-900 dark:text-white hover:text-brand-teal transition-colors";
 
-  const slaTextClass = isHRMS 
+  const slaTextClass = isLightAware 
     ? "text-sm font-semibold text-foreground" 
-    : "text-sm font-semibold text-white";
+    : "text-sm font-semibold text-slate-900 dark:text-white";
 
-  const securityBannerClass = isHRMS 
+  const securityBannerClass = isLightAware 
     ? "mt-10 p-4 rounded-2xl bg-muted/30 border border-border text-[11px] text-muted-foreground leading-relaxed flex gap-2" 
-    : "mt-10 p-4 rounded-2xl bg-brand-midnight/40 border border-brand-dark-gray/80 text-[11px] text-slate-400 leading-relaxed flex gap-2";
+    : "mt-10 p-4 rounded-2xl bg-slate-50 dark:bg-brand-midnight/40 border border-slate-200 dark:border-brand-dark-gray/80 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed flex gap-2";
 
-  const formContainerClass = isHRMS 
+  const formContainerClass = isLightAware 
     ? "p-8 rounded-3xl bg-card border border-border backdrop-blur-md relative shadow-sm" 
-    : "p-8 rounded-3xl bg-brand-dark-gray/30 border border-brand-dark-gray/80 backdrop-blur-md relative shadow-xl";
+    : "p-8 rounded-3xl bg-white dark:bg-brand-dark-gray/30 border border-slate-200 dark:border-brand-dark-gray/80 backdrop-blur-md relative shadow-sm dark:shadow-xl";
 
-  const formLabelClass = isHRMS 
+  const formLabelClass = isLightAware 
     ? "text-xs font-bold uppercase tracking-wider text-muted-foreground font-sans" 
-    : "text-xs font-bold uppercase tracking-wider text-slate-400 font-sans";
+    : "text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 font-sans";
 
-  const inputClass = isHRMS 
-    ? "px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder-muted-foreground/50 text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all w-full" 
-    : "px-4 py-3 rounded-xl bg-brand-midnight border border-brand-dark-gray/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-teal/50 focus:ring-1 focus:ring-brand-teal/50 transition-all w-full";
+  const inputClass = isLightAware 
+    ? "px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder-muted-foreground/60 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all w-full" 
+    : "px-4 py-3 rounded-xl bg-white dark:bg-brand-midnight border border-slate-300 dark:border-brand-dark-gray/80 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:border-brand-teal/50 focus:ring-1 focus:ring-brand-teal/50 transition-all w-full";
 
-  const selectClass = isHRMS 
-    ? "px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all w-full cursor-pointer" 
-    : "px-4 py-3 rounded-xl bg-brand-midnight border border-brand-dark-gray/80 text-slate-200 text-sm focus:outline-none focus:border-brand-teal/50 focus:ring-1 focus:ring-brand-teal/50 transition-all w-full cursor-pointer";
+  const selectClass = isLightAware 
+    ? "px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all w-full cursor-pointer" 
+    : "px-4 py-3 rounded-xl bg-white dark:bg-brand-midnight border border-slate-300 dark:border-brand-dark-gray/80 text-slate-900 dark:text-slate-200 text-sm focus:outline-none focus:border-brand-teal/50 focus:ring-1 focus:ring-brand-teal/50 transition-all w-full cursor-pointer";
 
-  const textareaClass = isHRMS 
-    ? "px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder-muted-foreground/50 text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all w-full resize-y min-h-[100px]" 
-    : "px-4 py-3 rounded-xl bg-brand-midnight border border-brand-dark-gray/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-teal/50 focus:ring-1 focus:ring-brand-teal/50 transition-all w-full resize-y min-h-[100px]";
+  const textareaClass = isLightAware 
+    ? "px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder-muted-foreground/60 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all w-full resize-y min-h-[100px]" 
+    : "px-4 py-3 rounded-xl bg-white dark:bg-brand-midnight border border-slate-300 dark:border-brand-dark-gray/80 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:border-brand-teal/50 focus:ring-1 focus:ring-brand-teal/50 transition-all w-full resize-y min-h-[100px]";
 
-  const btnSpanClass = isHRMS 
-    ? "relative w-full px-8 py-3.5 transition-all ease-in duration-75 bg-card hover:bg-transparent rounded-xl text-foreground hover:text-white flex items-center justify-center gap-2" 
+  const btnSpanClass = isLightAware 
+    ? "relative w-full px-8 py-3.5 transition-all ease-in duration-75 bg-[#0074d9] hover:bg-[#005bb5] rounded-xl text-white flex items-center justify-center gap-2 font-bold cursor-pointer" 
     : "relative w-full px-8 py-3.5 transition-all ease-in duration-75 bg-brand-midnight group-hover:bg-transparent rounded-xl text-slate-200 hover:text-white flex items-center justify-center gap-2";
 
   return (
     <section id="contact" className={sectionClass}>
       {/* Visual background accents */}
-      <div className={`absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 ${isHRMS ? 'bg-primary/5' : 'bg-brand-cyan/5'} rounded-full blur-[110px] pointer-events-none`}></div>
+      <div className={`absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 ${isPOS ? 'bg-[#0074d9]/5' : isHRMS ? 'bg-primary/5' : 'bg-brand-cyan/5'} rounded-full blur-[110px] pointer-events-none`}></div>
 
       <div className="container mx-auto px-4 md:px-6 max-w-8xl relative z-10">
         
@@ -152,13 +165,15 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
             </span>
           </div>
           <h2 className={sectionTitleClass}>
-            Start Your Custom <br />
+            {isPOS ? "Start Your Store & POS" : "Start Your Custom"} <br />
             <span className={gradientTitle}>
-              Engineering Initiative
+              {isPOS ? "Modernization Today" : "Engineering Initiative"}
             </span>
           </h2>
           <p className={sectionDescClass}>
-            Have a custom HRMS/Payroll product project or need low-latency backend systems? Our engineers are ready to build compliance-ready infrastructure tailored to your specs.
+            {isPOS
+              ? "Deploying a multi-branch retail chain, configuring FBR fiscal invoicing, or needing a timber CFT workflow? Our engineers are ready to build."
+              : "Have a custom HRMS/Payroll product project or need low-latency backend systems? Our engineers are ready to build compliance-ready infrastructure tailored to your specs."}
           </p>
         </div>
 
@@ -206,10 +221,16 @@ export default function ContactUs({ isHRMS = false }: ContactUsProps) {
                         href="https://wa.me/923170068650?text=Hi%20AM%20Tech%20Hub,%20I'm%20interested%20in%20initializing%20a%20project%20brief!" 
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-semibold text-white hover:text-emerald-400 transition-colors flex items-center gap-1.5"
+                        className={`text-sm font-semibold transition-colors flex items-center gap-1.5 ${
+                          isPOS
+                            ? "text-foreground hover:text-blue-600 dark:hover:text-blue-400"
+                            : isHRMS
+                            ? "text-foreground hover:text-primary"
+                            : "text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400"
+                        }`}
                       >
                         +923170068650
-                        <span className="inline-flex items-center justify-center bg-emerald-500/20 text-emerald-400 text-[9px] px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                        <span className="inline-flex items-center justify-center bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 text-[9px] px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wider">
                           Chat Live
                         </span>
                       </a>

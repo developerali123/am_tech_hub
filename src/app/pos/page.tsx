@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { POSHeader } from "@/components/pos/header";
 import { POSHero } from "@/components/pos/hero";
 import { POSTrustStrip } from "@/components/pos/trust-strip";
@@ -10,22 +10,29 @@ import { POSSimulator } from "@/components/pos/pos-simulator";
 import { POSIndustryPacks } from "@/components/pos/industry-packs";
 import { POSRolesMatrix } from "@/components/pos/roles-matrix";
 import { POSDeepFeatureGrid } from "@/components/pos/deep-feature-grid";
+import { POSTestimonials } from "@/components/pos/testimonials";
+import { POSPricing } from "@/components/pos/pricing";
 import { POSFaq } from "@/components/pos/faq";
 import { ScrollReveal } from "@/components/landing/scroll-reveal";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import DemoModal from "@/components/DemoModal";
 
 export default function CommercialPOSPage() {
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
+  const openDemo = () => setIsDemoOpen(true);
+  const closeDemo = () => setIsDemoOpen(false);
+
   return (
-    <div className="min-h-screen flex flex-col bg-[#001428] text-white selection:bg-[#0074d9] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-background text-foreground selection:bg-blue-600 selection:text-white transition-colors duration-300">
       {/* POS Top Navigation */}
-      <POSHeader />
+      <POSHeader onOpenDemo={openDemo} />
 
       <main className="flex-grow">
         {/* 1. Hero Section */}
         <ScrollReveal delayMs={50}>
-          <POSHero />
+          <POSHero onOpenDemo={openDemo} />
         </ScrollReveal>
 
         {/* 2. Trust & Architecture Strip */}
@@ -63,20 +70,33 @@ export default function CommercialPOSPage() {
           <POSDeepFeatureGrid />
         </ScrollReveal>
 
-        {/* 9. FAQ Section */}
+        {/* 9. Customer Success Section */}
+        <ScrollReveal>
+          <POSTestimonials />
+        </ScrollReveal>
+
+        {/* 10. Transparent Pricing */}
+        <ScrollReveal>
+          <POSPricing />
+        </ScrollReveal>
+
+        {/* 11. FAQ Section */}
         <ScrollReveal>
           <POSFaq />
         </ScrollReveal>
 
-        {/* 10. Standard Contact Section */}
-        <ContactUs />
+        {/* 12. POS-Aware Contact Section */}
+        <ContactUs isPOS />
       </main>
 
-      {/* 11. Standard Ecosystem Footer */}
+      {/* Standard Ecosystem Footer */}
       <Footer />
 
       {/* Floating Scroll to Top */}
       <ScrollToTop />
+
+      {/* Demo Booking Modal */}
+      <DemoModal isOpen={isDemoOpen} onClose={closeDemo} />
     </div>
   );
 }

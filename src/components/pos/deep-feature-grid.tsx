@@ -90,18 +90,18 @@ export function POSDeepFeatureGrid() {
   ];
 
   return (
-    <section id="deep-features" className="py-20 md:py-28 bg-[#001428] text-white relative">
+    <section id="deep-features" className="py-20 md:py-28 bg-muted/10 border-y border-border text-foreground relative transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-bold text-slate-300 mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-xs font-bold text-blue-600 dark:text-blue-400 mb-4">
             <span>Comprehensive Feature Directory</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white mb-4">
-            Architected for deep retail & wholesale control
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-foreground mb-4">
+            Engineered for complete store autonomy
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
             Organized exactly like the live product navigation. Every module connects to a unified ledger and database.
           </p>
         </div>
@@ -114,8 +114,8 @@ export function POSDeepFeatureGrid() {
               onClick={() => setActiveTab(idx)}
               className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 cursor-pointer ${
                 activeTab === idx
-                  ? "bg-[#0074d9] text-white shadow-md shadow-[#0074d9]/30"
-                  : "bg-[#001f3f] text-slate-300 hover:bg-[#002b57] border border-white/10"
+                  ? "bg-[#0074d9] text-white shadow-md shadow-blue-500/30"
+                  : "bg-card hover:bg-muted text-foreground border border-border shadow-xs"
               }`}
             >
               {group.icon}
@@ -129,16 +129,16 @@ export function POSDeepFeatureGrid() {
           {GROUPS[activeTab].items.map((item, i) => (
             <div
               key={i}
-              className="p-5 rounded-2xl bg-[#001b38] border border-white/10 hover:border-[#0074d9]/50 transition-all flex items-start gap-3.5 group"
+              className="p-5 rounded-2xl bg-card border border-border hover:border-blue-500/50 hover:shadow-md transition-all flex items-start gap-3.5 group shadow-xs"
             >
-              <div className="size-6 rounded-lg bg-[#0074d9]/20 border border-[#0074d9]/40 flex items-center justify-center text-[#4da3ff] shrink-0 mt-0.5">
+              <div className="size-6 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0 mt-0.5">
                 <RiCheckLine className="size-4" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-white group-hover:text-[#4da3ff] transition-colors">
+                <h4 className="text-sm font-bold text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {item.name}
                 </h4>
-                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
                   {item.desc}
                 </p>
               </div>

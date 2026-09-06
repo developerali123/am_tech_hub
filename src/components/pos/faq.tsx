@@ -34,19 +34,19 @@ export function POSFaq() {
   ];
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-[#001021] text-white relative">
+    <section id="faq" className="py-20 md:py-28 bg-background text-foreground relative transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 md:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#0074d9]/30 bg-[#0074d9]/10 text-xs font-bold text-[#4da3ff] mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-xs font-bold text-blue-600 dark:text-blue-400 mb-4">
             <RiQuestionLine className="size-3.5" />
             <span>Frequently Asked Questions</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-foreground mb-4">
             Answers to common implementation questions
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
             Have questions about hardware compatibility, tax compliance, or multi-branch rollouts? Here is everything you need to know.
           </p>
         </div>
@@ -60,24 +60,24 @@ export function POSFaq() {
                 key={idx}
                 className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? "bg-[#001a36] border-[#0074d9]/50 shadow-lg shadow-[#0074d9]/10"
-                    : "bg-[#00152b] border-white/10 hover:border-white/20"
+                    ? "bg-card border-2 border-blue-500/50 shadow-md shadow-blue-500/5 ring-1 ring-blue-500/20"
+                    : "bg-card border border-border hover:border-border/80 shadow-xs"
                 }`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full text-left p-5 md:p-6 flex items-center justify-between gap-4 font-bold text-white focus:outline-none cursor-pointer"
+                  className="w-full text-left p-5 md:p-6 flex items-center justify-between gap-4 font-bold text-foreground focus:outline-none cursor-pointer"
                 >
                   <span className="text-sm md:text-base">{faq.q}</span>
                   <RiArrowDownSLine
-                    className={`size-5 text-[#4da3ff] transition-transform duration-200 shrink-0 ${
+                    className={`size-5 text-blue-600 dark:text-blue-400 transition-transform duration-200 shrink-0 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 md:px-6 pb-6 text-xs md:text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+                  <div className="px-5 md:px-6 pb-6 text-xs md:text-sm text-muted-foreground leading-relaxed border-t border-border/60 pt-4">
                     {faq.a}
                   </div>
                 )}

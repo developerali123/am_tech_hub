@@ -3,8 +3,10 @@
 import * as React from "react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { RiSunLine, RiMoonLine, RiMenuLine, RiCloseLine, RiFlashlightLine } from "@remixicon/react";
 import { cn } from "@/lib/utils";
+
 
 const NAV_ITEMS = [
   { label: "Features", href: "#features" },
@@ -72,41 +74,17 @@ export function Header({ onOpenDemo }: { onOpenDemo: () => void }) {
         {/* CTA & Actions */}
         <div className="hidden lg:flex items-center gap-3">
           {/* Theme Toggle */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="rounded-full text-muted-foreground hover:text-foreground"
-            aria-label="Toggle theme"
-          >
-            {mounted && resolvedTheme === "dark" ? (
-              <RiSunLine className="size-5 animate-pulse" />
-            ) : (
-              <RiMoonLine className="size-5" />
-            )}
-          </Button>
+          <ThemeToggle />
 
-          <Button variant="default" size="sm" onClick={onOpenDemo} className="rounded-full shadow-md shadow-primary/10">
-            Start Free Demo
+          <Button variant="default" size="sm" onClick={onOpenDemo} className="rounded-full shadow-md shadow-primary/15 font-semibold px-5 cursor-pointer">
+            Request Demo
           </Button>
         </div>
 
         {/* Mobile controls */}
         <div className="flex xl:hidden items-center gap-2">
           {/* Theme Toggle */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="rounded-full text-muted-foreground hover:text-foreground"
-            aria-label="Toggle theme"
-          >
-            {mounted && resolvedTheme === "dark" ? (
-              <RiSunLine className="size-5" />
-            ) : (
-              <RiMoonLine className="size-5" />
-            )}
-          </Button>
+          <ThemeToggle />
 
           <Button
             variant="ghost"
@@ -141,8 +119,8 @@ export function Header({ onOpenDemo }: { onOpenDemo: () => void }) {
         </nav>
 
         <div className="flex flex-col gap-3 mt-auto">
-          <Button variant="default" className="w-full rounded-full py-6 shadow-md shadow-primary/10" onClick={() => { setMobileMenuOpen(false); onOpenDemo(); }}>
-            Start Free Demo
+          <Button variant="default" className="w-full rounded-full py-6 shadow-md shadow-primary/15 font-semibold text-base" onClick={() => { setMobileMenuOpen(false); onOpenDemo(); }}>
+            Request Demo
           </Button>
         </div>
       </div>

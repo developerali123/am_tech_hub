@@ -261,12 +261,12 @@ export default function SolutionDetailPage() {
           </div>
 
           {/* Solution FAQ Section (Accordions) */}
-          <div className="border-t border-brand-dark-gray/50 pt-16">
+          <div className="border-t border-slate-200 dark:border-brand-dark-gray/50 pt-16">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white font-sans">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white font-sans">
                 Solution Frequently Asked Questions
               </h2>
-              <p className="text-slate-400 text-sm mt-2 font-sans">
+              <p className="text-slate-600 dark:text-slate-400 text-sm mt-2 font-sans">
                 Learn more about integration timelines, data pipelines, and setup.
               </p>
             </div>
@@ -277,17 +277,19 @@ export default function SolutionDetailPage() {
                 return (
                   <div
                     key={idx}
-                    className={`rounded-2xl border transition-all duration-300 ${
-                      isOpen ? "bg-brand-dark-gray/50 border-brand-cyan/40" : "bg-brand-dark-gray/25 border-brand-dark-gray/80 hover:border-brand-cyan/20"
+                    className={`rounded-2xl border transition-all duration-300 shadow-xs ${
+                      isOpen
+                        ? "bg-white dark:bg-brand-dark-gray/50 border-brand-cyan/80 dark:border-brand-cyan/40 shadow-sm"
+                        : "bg-white/90 dark:bg-brand-dark-gray/25 border-slate-200/90 dark:border-brand-dark-gray/80 hover:border-brand-cyan/40 dark:hover:border-brand-cyan/20"
                     }`}
                   >
                     <button
                       onClick={() => setActiveFaqIdx(isOpen ? null : idx)}
-                      className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold text-sm md:text-base text-white focus:outline-none"
+                      className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold text-sm md:text-base text-slate-900 dark:text-white focus:outline-none cursor-pointer"
                     >
-                      <span className="font-sans">{item.q}</span>
+                      <span className="font-sans text-slate-900 dark:text-white">{item.q}</span>
                       <svg
-                        className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isOpen ? "rotate-180 text-brand-cyan" : ""}`}
+                        className={`w-5 h-5 text-slate-500 dark:text-slate-400 transition-transform duration-300 ${isOpen ? "rotate-180 text-brand-cyan dark:text-brand-cyan" : ""}`}
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2.5"
@@ -298,10 +300,10 @@ export default function SolutionDetailPage() {
                     </button>
                     <div
                       className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        isOpen ? "max-h-[300px] opacity-100 border-t border-brand-dark-gray/60" : "max-h-0 opacity-0 pointer-events-none"
+                        isOpen ? "max-h-[300px] opacity-100 border-t border-slate-200 dark:border-brand-dark-gray/60" : "max-h-0 opacity-0 pointer-events-none"
                       }`}
                     >
-                      <p className="p-6 text-sm text-slate-300 leading-relaxed font-sans">
+                      <p className="p-6 text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
                         {item.a}
                       </p>
                     </div>

@@ -279,13 +279,26 @@ html.light .bg-grid-lines {
     linear-gradient(to bottom, rgba(0, 225, 217, 0.08) 1px, transparent 1px);
 }
 
-html.light h1,
-html.light h2,
-html.light h3,
-html.light h4,
-html.light .text-white {
+html.light h1:not([class*="text-transparent"]),
+html.light h2:not([class*="text-transparent"]),
+html.light h3:not([class*="text-transparent"]),
+html.light h4:not([class*="text-transparent"]) {
   color: #0f172a !important;
 }
+
+/* Retain white text strictly on solid colored buttons, badges, and primary action items */
+html.light .bg-primary,
+html.light .bg-primary *,
+html.light .text-primary-foreground,
+html.light button.bg-\[\#0074d9\],
+html.light button.bg-\[\#0074d9\] *,
+html.light a.bg-\[\#0074d9\],
+html.light a.bg-\[\#0074d9\] *,
+html.light [data-slot="button"][data-variant="default"],
+html.light [data-slot="button"][data-variant="default"] * {
+  color: #ffffff !important;
+}
+
 
 html.light p,
 html.light .text-slate-300,

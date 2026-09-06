@@ -151,18 +151,18 @@ export function POSFeaturePillars() {
   ];
 
   return (
-    <section id="pillars" className="py-20 md:py-28 bg-[#001021] text-white relative">
+    <section id="pillars" className="py-20 md:py-28 bg-muted/10 border-y border-border text-foreground relative transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#0074d9]/30 bg-[#0074d9]/10 text-xs font-bold text-[#4da3ff] mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-xs font-bold text-blue-600 dark:text-blue-400 mb-4">
             <span>6 Core Operational Pillars</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-foreground mb-4">
             Everything your retail & wholesale operation needs
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
             No bloated junk drawers. Commercial POS focuses on the six core disciplines that make stores profitable, accountable, and legally compliant.
           </p>
         </div>
@@ -177,15 +177,15 @@ export function POSFeaturePillars() {
                 onClick={() => setActivePillar(idx)}
                 className={`p-3.5 rounded-2xl text-left transition-all duration-200 cursor-pointer border flex flex-col items-start justify-between min-h-[95px] ${
                   isSelected
-                    ? "bg-[#00284d] border-[#0074d9] text-white shadow-lg shadow-[#0074d9]/20"
-                    : "bg-[#00162e] border-white/10 hover:border-white/20 text-slate-300"
+                    ? "bg-[#0074d9] border-[#0074d9] text-white shadow-lg shadow-blue-500/25"
+                    : "bg-card border-border hover:border-blue-500/50 text-foreground hover:bg-muted shadow-xs"
                 }`}
               >
                 <div className="flex items-center justify-between w-full mb-2">
-                  <span className={`p-1.5 rounded-lg ${isSelected ? "bg-[#0074d9] text-white" : "bg-white/5 text-[#4da3ff]"}`}>
+                  <span className={`p-1.5 rounded-lg ${isSelected ? "bg-white/20 text-white" : "bg-blue-500/10 text-blue-600 dark:text-blue-400"}`}>
                     {pillar.icon}
                   </span>
-                  <span className="text-[10px] font-mono text-slate-400">{pillar.route}</span>
+                  <span className={`text-[10px] font-mono ${isSelected ? "text-white/90" : "text-muted-foreground"}`}>{pillar.route}</span>
                 </div>
                 <span className="text-xs font-bold leading-tight">{pillar.title}</span>
               </button>
@@ -197,31 +197,31 @@ export function POSFeaturePillars() {
         {(() => {
           const cur = PILLARS[activePillar];
           return (
-            <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-[#001b38] to-[#001428] border border-[#0074d9]/40 shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-96 h-96 bg-[#0074d9]/10 rounded-full blur-[100px] pointer-events-none" />
+            <div className="p-8 md:p-12 rounded-3xl bg-card border border-border shadow-xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
                 {/* Left: Explanatory Content */}
                 <div className="lg:col-span-7 space-y-6">
                   <div className="flex items-center gap-3">
-                    <div className="size-12 rounded-2xl bg-[#0074d9]/20 border border-[#0074d9]/40 flex items-center justify-center">
+                    <div className="size-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
                       {cur.icon}
                     </div>
                     <div>
-                      <div className="text-[11px] font-mono text-[#4da3ff] uppercase tracking-wider">{cur.route}</div>
-                      <h3 className="text-2xl md:text-3xl font-extrabold text-white">{cur.title}</h3>
+                      <div className="text-[11px] font-mono text-blue-600 dark:text-blue-400 uppercase tracking-wider font-semibold">{cur.route}</div>
+                      <h3 className="text-2xl md:text-3xl font-extrabold text-foreground">{cur.title}</h3>
                     </div>
                   </div>
 
-                  <p className="text-sm md:text-base font-medium text-[#4da3ff] leading-relaxed">
+                  <p className="text-sm md:text-base font-semibold text-blue-600 dark:text-blue-400 leading-relaxed">
                     {cur.sellingLine}
                   </p>
 
                   <div className="space-y-3 pt-2">
                     {cur.highlights.map((h, i) => (
-                      <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
+                      <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-foreground/90 font-medium">
                         <div className="size-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                          <RiCheckLine className="size-3.5 text-emerald-400" />
+                          <RiCheckLine className="size-3.5 text-emerald-600 dark:text-emerald-400" />
                         </div>
                         <span className="leading-snug">{h}</span>
                       </div>
@@ -231,7 +231,7 @@ export function POSFeaturePillars() {
                   <div className="pt-4 flex items-center gap-4">
                     <a
                       href="#simulator"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0074d9] hover:bg-[#005bb5] text-white text-xs font-bold transition-colors"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0074d9] hover:bg-[#005bb5] text-white text-xs font-bold transition-colors cursor-pointer shadow-md shadow-blue-500/20"
                     >
                       Test in Counter Simulator <RiArrowRightLine className="size-4" />
                     </a>
@@ -240,33 +240,33 @@ export function POSFeaturePillars() {
 
                 {/* Right: Live Mock Preview Panel */}
                 <div className="lg:col-span-5">
-                  <div className="rounded-2xl border border-white/15 bg-[#001224] p-6 shadow-xl relative overflow-hidden">
-                    <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
+                  <div className="rounded-2xl border border-border bg-muted/20 p-6 shadow-lg relative overflow-hidden">
+                    <div className="flex items-center justify-between pb-4 border-b border-border mb-5">
                       <div>
-                        <span className="text-xs font-bold text-white block">{cur.preview.title}</span>
-                        <span className="text-[10px] font-mono text-[#4da3ff]">{cur.preview.badge}</span>
+                        <span className="text-xs font-bold text-foreground block">{cur.preview.title}</span>
+                        <span className="text-[10px] font-mono font-semibold text-blue-600 dark:text-blue-400">{cur.preview.badge}</span>
                       </div>
-                      <span className="size-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="size-2.5 rounded-full bg-emerald-500 animate-pulse" />
                     </div>
 
                     {/* Quick Metric Tiles */}
                     <div className="grid grid-cols-2 gap-3 mb-5">
-                      <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
-                        <span className="text-[10px] text-slate-400 block">{cur.preview.stat1.label}</span>
-                        <span className="text-base font-extrabold text-white mt-1 block">{cur.preview.stat1.val}</span>
+                      <div className="p-3.5 rounded-xl bg-card border border-border shadow-xs">
+                        <span className="text-[10px] text-muted-foreground block">{cur.preview.stat1.label}</span>
+                        <span className="text-base font-extrabold text-foreground mt-1 block">{cur.preview.stat1.val}</span>
                       </div>
-                      <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
-                        <span className="text-[10px] text-slate-400 block">{cur.preview.stat2.label}</span>
-                        <span className="text-base font-extrabold text-emerald-400 mt-1 block">{cur.preview.stat2.val}</span>
+                      <div className="p-3.5 rounded-xl bg-card border border-border shadow-xs">
+                        <span className="text-[10px] text-muted-foreground block">{cur.preview.stat2.label}</span>
+                        <span className="text-base font-extrabold text-emerald-600 dark:text-emerald-400 mt-1 block">{cur.preview.stat2.val}</span>
                       </div>
                     </div>
 
-                    <div className="p-4 rounded-xl bg-[#001e3d] border border-[#0074d9]/30">
-                      <div className="flex items-center gap-2 text-xs font-bold text-white mb-1">
-                        <span className="size-2 rounded-full bg-[#0074d9]" />
+                    <div className="p-4 rounded-xl bg-card border border-border shadow-xs">
+                      <div className="flex items-center gap-2 text-xs font-bold text-foreground mb-1">
+                        <span className="size-2 rounded-full bg-blue-600" />
                         {cur.preview.metricTitle}
                       </div>
-                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                      <p className="text-[11px] text-muted-foreground leading-relaxed">
                         {cur.preview.metricSubtitle}
                       </p>
                     </div>
@@ -281,3 +281,4 @@ export function POSFeaturePillars() {
     </section>
   );
 }
+
