@@ -60,7 +60,7 @@ export default function CareersPage() {
 
               <div className="pt-4">
                 <a
-                  href="mailto:muhammadalimirza90@gmail.com"
+                  href="mailto:contact@amtechhub.online"
                   className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs font-bold text-brand-midnight bg-gradient-to-r from-brand-teal to-brand-cyan hover:shadow-lg hover:shadow-brand-teal/20 transition-all duration-300 transform hover:-translate-y-0.5 font-sans"
                 >
                   Send Speculative CV

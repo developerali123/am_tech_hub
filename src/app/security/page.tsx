@@ -66,7 +66,7 @@ export default function SecurityPage() {
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white font-sans">5. Vulnerability Disclosures</h2>
               <p>
-                We execute automated dependencies auditing runs daily inside our CI/CD pipelines. Security researchers can coordinate reports of compliance anomalies or bugs to <a href="mailto:muhammadalimirza90@gmail.com" className="text-brand-teal hover:underline font-bold">muhammadalimirza90@gmail.com</a>.
+                We execute automated dependencies auditing runs daily inside our CI/CD pipelines. Security researchers can coordinate reports of compliance anomalies or bugs to <a href="mailto:contact@amtechhub.online" className="text-brand-teal hover:underline font-bold">contact@amtechhub.online</a>.
               </p>
             </section>
           </div>

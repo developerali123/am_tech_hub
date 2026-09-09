@@ -22,7 +22,7 @@ We provide security updates and patches for actively maintained versions of our 
 
 If you identify a potential security vulnerability or compliance issue within any AM Tech Hub system, please notify us immediately through our designated security channel:
 
-- **Primary Contact**: [muhammadalimirza90@gmail.com](mailto:muhammadalimirza90@gmail.com)
+- **Primary Contact**: [contact@amtechhub.online](mailto:contact@amtechhub.online)
 - **Alternative / Escalation**: [contact@amtechhub.com](mailto:contact@amtechhub.com)
 - **Subject Line**: `[SECURITY VULNERABILITY] <Component/Domain> - <Brief Summary>`
 

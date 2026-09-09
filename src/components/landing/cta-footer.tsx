@@ -98,7 +98,7 @@ export function CtaFooter() {
             <ul className="space-y-2.5">
               <li className="flex items-center gap-2">
                 <RiMailLine className="size-4 text-primary shrink-0" />
-                <a href="mailto:muhammadalimirza90@gmail.com" className="hover:text-foreground">muhammadalimirza90@gmail.com</a>
+                <a href="mailto:contact@amtechhub.online" className="hover:text-foreground">contact@amtechhub.online</a>
               </li>
               <li className="flex items-center gap-2">
                 <RiPhoneLine className="size-4 text-primary shrink-0" />

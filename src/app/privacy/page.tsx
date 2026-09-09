@@ -66,7 +66,7 @@ export default function PrivacyPage() {
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white font-sans">5. Contact and Inquiries</h2>
               <p>
-                For questions regarding data processing policies, direct tickets to our privacy desk at <a href="mailto:muhammadalimirza90@gmail.com" className="text-brand-teal hover:underline font-bold">muhammadalimirza90@gmail.com</a>.
+                For questions regarding data processing policies, direct tickets to our privacy desk at <a href="mailto:contact@amtechhub.online" className="text-brand-teal hover:underline font-bold">contact@amtechhub.online</a>.
               </p>
             </section>
           </div>

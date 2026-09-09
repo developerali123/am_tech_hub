@@ -202,8 +202,8 @@ export default function ContactUs({ isHRMS = false, isPOS = false }: ContactUsPr
                     </div>
                     <div>
                       <div className={labelClass}>Engineering Mail</div>
-                      <a href="mailto:muhammadalimirza90@gmail.com" className={linkLabelClass}>
-                        muhammadalimirza90@gmail.com
+                      <a href="mailto:contact@amtechhub.online" className={linkLabelClass}>
+                        contact@amtechhub.online
                       </a>
                     </div>
                   </div>

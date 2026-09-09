@@ -100,8 +100,8 @@ export default function HRMSContact() {
                     </div>
                     <div>
                       <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Client Mail</div>
-                      <a href="mailto:muhammadalimirza90@gmail.com" className="text-sm font-semibold text-foreground hover:text-primary transition-colors">
-                        muhammadalimirza90@gmail.com
+                      <a href="mailto:contact@amtechhub.online" className="text-sm font-semibold text-foreground hover:text-primary transition-colors">
+                        contact@amtechhub.online
                       </a>
                     </div>
                   </div>
