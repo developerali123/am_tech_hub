@@ -12,13 +12,20 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AM Tech Hub | Enterprise SaaS, Commercial POS & Custom Engineering",
-  description: "AM Tech Hub engineers high-performance enterprise applications, Commercial POS retail systems, automated Payroll & HRMS SaaS platforms, and cloud architectures at scale.",
+  metadataBase: new URL("https://amtechhub.com"),
+  title: {
+    default: "AM Tech Hub | Enterprise SaaS, Commercial POS & Custom Engineering",
+    template: "%s | AM Tech Hub",
+  },
+  description: "AM Tech Hub builds high-performance enterprise SaaS, commercial POS systems, automated HRMS payroll platforms, and scalable cloud software architectures.",
   keywords: ["Software Engineering", "Commercial POS", "Point of Sale", "FBR Fiscal Invoicing", "Retail Inventory", "Enterprise HRMS", "Payroll Automation", "Cloud Architecture", "DevOps"],
   authors: [{ name: "AM Tech Hub" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "AM Tech Hub | Enterprise SaaS, Commercial POS & Custom Engineering",
-    description: "AM Tech Hub engineers high-performance enterprise applications, Commercial POS retail systems, automated Payroll & HRMS SaaS platforms, and cloud architectures at scale.",
+    description: "AM Tech Hub builds high-performance enterprise SaaS, commercial POS systems, automated HRMS payroll platforms, and scalable cloud software architectures.",
     url: "https://amtechhub.com",
     siteName: "AM Tech Hub",
     type: "website",
