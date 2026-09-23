@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Enterprise Security & Compliance Architecture | AM Tech Hub",
     description: "Explore AM Tech Hub security standards: SOC2 compliance, logical tenant isolation, data encryption, and audit logging.",
-    url: "https://amtechhub.com/security",
+    url: "https://amtechhub.online/security",
   },
 };
 

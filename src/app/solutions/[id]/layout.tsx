@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     openGraph: {
       title: `${solution.title} | AM Tech Hub`,
       description: solution.desc,
-      url: `https://amtechhub.com/solutions/${id}`,
+      url: `https://amtechhub.online/solutions/${id}`,
     },
   };
 }

@@ -12,7 +12,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://amtechhub.com"),
+  metadataBase: new URL("https://amtechhub.online"),
   title: {
     default: "AM Tech Hub | Enterprise SaaS, Commercial POS & Custom Engineering",
     template: "%s | AM Tech Hub",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AM Tech Hub | Enterprise SaaS, Commercial POS & Custom Engineering",
     description: "AM Tech Hub builds high-performance enterprise SaaS, commercial POS systems, automated HRMS payroll platforms, and scalable cloud software architectures.",
-    url: "https://amtechhub.com",
+    url: "https://amtechhub.online",
     siteName: "AM Tech Hub",
     type: "website",
   },

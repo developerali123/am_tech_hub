@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Enterprise HRMS & Automated Payroll Software | AM Tech Hub",
     description: "Automate workforce management, multi-tier approval workflows, dynamic shift rosters, and compliant payroll processing.",
-    url: "https://amtechhub.com/hrms",
+    url: "https://amtechhub.online/hrms",
   },
 };
 

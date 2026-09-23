@@ -78,8 +78,8 @@ export function POSCtaFooter({ onOpenDemo }: POSCtaFooterProps) {
             </p>
 
             <div className="flex items-center gap-4 text-slate-400">
-              <a href="mailto:info@amtechhub.com" className="hover:text-white flex items-center gap-1.5">
-                <RiMailLine className="size-3.5 text-[#4da3ff]" /> info@amtechhub.com
+              <a href="mailto:info@amtechhub.online" className="hover:text-white flex items-center gap-1.5">
+                <RiMailLine className="size-3.5 text-[#4da3ff]" /> info@amtechhub.online
               </a>
               <span className="text-slate-600">|</span>
               <a href="/hrms" className="hover:text-white text-[11px] text-slate-400 hover:text-[#4da3ff]">

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Commercial POS System | Retail & Fiscal Billing | AM Tech Hub",
     description: "Enterprise commercial POS with offline-first sync, real-time inventory, hardware integration, and FBR fiscal compliance.",
-    url: "https://amtechhub.com/pos",
+    url: "https://amtechhub.online/pos",
   },
 };
 

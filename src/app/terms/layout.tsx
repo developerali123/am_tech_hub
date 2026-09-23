@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Terms of Service | AM Tech Hub",
     description: "Read the terms of service governing usage of AM Tech Hub enterprise applications, SaaS platforms, and software solutions.",
-    url: "https://amtechhub.com/terms",
+    url: "https://amtechhub.online/terms",
   },
 };
 

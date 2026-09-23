@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Engineering Services & Enterprise Solutions | AM Tech Hub",
     description: "Full-cycle software engineering, AI agentic automations, high-concurrency architectures, and cloud DevOps infrastructure.",
-    url: "https://amtechhub.com/services",
+    url: "https://amtechhub.online/services",
   },
 };
 

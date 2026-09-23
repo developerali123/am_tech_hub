@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://amtechhub.com/sitemap.xml",
+    sitemap: "https://amtechhub.online/sitemap.xml",
   };
 }

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Careers at AM Tech Hub | Engineering & Product Roles",
     description: "Join our engineering team building high-performance SaaS, commercial POS platforms, and cloud infrastructure.",
-    url: "https://amtechhub.com/careers",
+    url: "https://amtechhub.online/careers",
   },
 };
 

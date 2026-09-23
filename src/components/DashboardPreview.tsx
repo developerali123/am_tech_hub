@@ -159,7 +159,7 @@ export default function DashboardPreview() {
                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></div>
                     <div className="w-2.5 h-2.5 rounded-full bg-green-500/70"></div>
                     <div className="h-4 w-48 sm:w-60 rounded bg-brand-dark-gray/50 ml-4 border border-brand-dark-gray/30 text-[9px] text-slate-400 flex items-center justify-center font-mono tracking-wide">
-                      app.amtechhub.com/dashboard/control-center
+                      app.amtechhub.online/dashboard/control-center
                     </div>
                   </div>
                   <div className="text-[10px] text-slate-500 font-mono hidden sm:block">

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Privacy Policy | AM Tech Hub",
     description: "Learn how AM Tech Hub collects, processes, and protects customer data across our SaaS products and services.",
-    url: "https://amtechhub.com/privacy",
+    url: "https://amtechhub.online/privacy",
   },
 };
 
