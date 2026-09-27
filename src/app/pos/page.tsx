@@ -13,7 +13,7 @@ import { POSDeepFeatureGrid } from "@/components/pos/deep-feature-grid";
 import { POSTestimonials } from "@/components/pos/testimonials";
 import { POSPricing } from "@/components/pos/pricing";
 import { POSFaq } from "@/components/pos/faq";
-import { ScrollReveal } from "@/components/landing/scroll-reveal";
+import { ScrollReveal } from "@/components/hrms/scroll-reveal";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";

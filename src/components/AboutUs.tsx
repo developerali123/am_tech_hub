@@ -5,9 +5,9 @@ import React from "react";
 export default function AboutUs() {
   const values = [
     {
-      title: "Our Engineering Creed",
+      title: "Real Speed, Zero Frustration",
       description:
-        "We believe enterprise software shouldn't be slow or rigid. We design our platforms with sub-millisecond API response latency, high availability, and modular resilience. Every line of code is compiled for massive transactional throughput.",
+        "Enterprise software shouldn't lag, crash on payday, or freeze at checkout. We architect our platforms for sub-second response times and rock-solid uptime—so your teams work without interruption and your customers never have to wait.",
       icon: (
         <svg className="w-6 h-6 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="12 2 2 7 12 12 22 7 12 2" />
@@ -17,9 +17,9 @@ export default function AboutUs() {
       ),
     },
     {
-      title: "Tailored Custom Blueprints",
+      title: "Tailored to Your Workflows",
       description:
-        "Every organization has unique processes. We build fully custom microservices architectures and tailored SaaS extensions (such as our high-performance HRMS and Payroll platforms) that align with your workflows rather than forcing you into a standard box.",
+        "No two businesses operate the exact same way. Instead of forcing you into a rigid one-size-fits-all box, we customize our HRMS, POS, and cloud platforms to match how your business actually runs, eliminating tedious manual workarounds.",
       icon: (
         <svg className="w-6 h-6 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22h9M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
@@ -27,9 +27,9 @@ export default function AboutUs() {
       ),
     },
     {
-      title: "SOC2 & GDPR Compliance",
+      title: "Security & Peace of Mind",
       description:
-        "Security is baked into our foundation. From database partition bounds and TLS 1.3 tunnels to secure multi-factor user validation and automated payroll tax audit tracks, we ensure strict data isolation and enterprise-grade compliance.",
+        "Your business data is sacred. From encrypted multi-state payroll disbursements and strict role-based access to automated audit trails and GDPR/SOC2 best practices, we protect your company from day one.",
       icon: (
         <svg className="w-6 h-6 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
@@ -51,17 +51,17 @@ export default function AboutUs() {
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-teal/20 bg-brand-dark-gray/60 backdrop-blur-md mb-4">
             <span className="text-[10px] font-bold tracking-widest uppercase text-brand-teal">
-              Who We Are
+              Who We Are & What We Believe
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans">
-            Architecting Next-Gen <br />
+            Engineers Who Treat Your Business <br />
             <span className="bg-gradient-to-r from-brand-teal to-brand-cyan bg-clip-text text-transparent">
-              Enterprise Systems
+              Like Our Very Own
             </span>
           </h2>
           <p className="text-slate-400 mt-6 text-base md:text-lg leading-relaxed font-sans">
-            AM Tech Hub is a premium engineering studio. We offer specialized B2B SaaS platforms and custom cloud architectures designed to handle millions of active workflows with absolute precision.
+            AM Tech Hub is an agile software engineering studio. We combine ready-to-deploy enterprise SaaS products (HRMS, Payroll, Commercial POS) with custom software development to help ambitious businesses streamline operations and scale without tech bottlenecks.
           </p>
         </div>
 

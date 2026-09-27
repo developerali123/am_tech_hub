@@ -119,15 +119,14 @@ export default function Solutions() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full border border-brand-cyan/20 bg-brand-midnight/60 backdrop-blur-md mb-4">
               <span className="text-[10px] font-bold tracking-widest uppercase text-brand-cyan">
-                Business Capability
+                Proven Solutions
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white font-sans">
-              Custom Enterprise Solutions
+              Tailored Solutions for Real-World Challenges
             </h2>
             <p className="text-slate-400 mt-4 leading-relaxed font-sans">
-              Deploy secure, high-performance blueprints customized to your business goals. 
-              Accelerate time-to-market with pre-tested framework layers.
+              Whether you are speeding up checkout queues in busy stores or eliminating manual calculation errors across complex payroll cycles, our solutions remove operational friction so you can focus on expanding your business.
             </p>
           </div>
         </div>

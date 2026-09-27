@@ -178,32 +178,39 @@ export default function Hero({ onOpenDemo }: HeroProps) {
         <div className="inline-flex items-center gap-2.5 px-4.5 py-1.5 rounded-full border border-brand-teal/20 bg-brand-dark-gray/60 backdrop-blur-md animate-fade-in hover:border-brand-teal/50 transition-colors">
           <span className="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
           <span className="text-xs font-semibold tracking-wider uppercase text-slate-300">
-            Enterprise SaaS & Custom Engineering
+            Intelligent Software • Rapid Deployment • Proven Scale
           </span>
         </div>
 
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.1] font-sans">
-          Engineering Scalable <br />
+          Modern HRMS, Smart POS & <br />
           <span className="bg-gradient-to-r from-brand-teal via-[#00f2fe] to-brand-teal bg-[length:200%_auto] animate-shimmer bg-clip-text text-transparent">
-            B2B Software Solutions
+            Custom Software Built for Growth
           </span>
         </h1>
 
         {/* Sub-headline */}
         <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed font-sans">
-          The Central Hub for Enterprise HRMS, Payroll, and High-Performance Applications. 
-          We architect mission-critical infrastructure to power high-concurrency environments.
+          Stop struggling with fragmented tools, payroll delays, and rigid off-the-shelf software. 
+          AM Tech Hub engineers automated, audit-ready HRMS platforms, lightning-fast commercial POS systems, 
+          and dedicated custom cloud solutions tailored to your real business workflows.
         </p>
 
-        {/* Single CTA */}
+        {/* Action CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 w-full justify-center items-center">
           <a
             href="#services"
             className="w-full sm:w-auto px-8 py-4 text-sm font-bold text-brand-midnight rounded-full bg-gradient-to-r from-brand-teal to-brand-cyan hover:shadow-xl hover:shadow-brand-teal/25 hover:scale-[1.02] active:scale-100 transition-all duration-300 text-center font-sans"
           >
-            Explore Our Platforms
+            Explore Our Solutions
           </a>
+          <button
+            onClick={onOpenDemo}
+            className="w-full sm:w-auto px-8 py-4 text-sm font-bold text-white rounded-full border border-brand-teal/40 hover:bg-brand-teal/10 hover:border-brand-teal transition-all duration-300 text-center font-sans cursor-pointer"
+          >
+            Schedule a Live Demo
+          </button>
         </div>
 
       </div>

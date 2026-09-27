@@ -96,15 +96,14 @@ export default function Services() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full border border-brand-teal/20 bg-brand-midnight/60 backdrop-blur-md mb-4">
               <span className="text-[10px] font-bold tracking-widest uppercase text-brand-teal">
-                Core Operations
+                Expertise & Capabilities
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white font-sans">
-              Our Core Technical Services
+              Services Built to Accelerate Your Growth
             </h2>
             <p className="text-slate-400 mt-4 leading-relaxed font-sans">
-              We deliver enterprise-grade performance through specialized tracks. 
-              Discover how we architect for speed, compliance, and modular scale.
+              From turnkey SaaS products (HRMS, Payroll, POS) to custom full-stack engineering and cloud DevOps, we give you the senior technical firepower to scale efficiently without the overhead of big-firm agencies.
             </p>
           </div>
           <a
