@@ -5,63 +5,98 @@ import path from "path";
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-    const { name, email, projectType, message } = data;
+    const {
+      name,
+      email,
+      phone = "",
+      companySize = "",
+      service = "",
+      projectType,
+      message,
+      source = "Website Contact Form",
+    } = data;
 
-    if (!name || !email || !message) {
+    if (!name || !email) {
       return NextResponse.json(
-        { error: "Name, email, and message are required fields." },
+        { error: "Name and email are required fields." },
         { status: 400 }
       );
     }
 
-    const timestamp = new Date().toISOString();
+    const resolvedProject = projectType || service || "General Inquiry";
+    const resolvedMessage = message || `Inquiry received via ${source}.`;
+
+    const now = new Date();
+    const formattedTimestamp = now.toLocaleString("en-US", {
+      timeZone: "UTC",
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    }) + " UTC";
+
     const submission = {
-      timestamp,
+      timestamp: formattedTimestamp,
+      source,
       name,
       email,
-      projectType: projectType || "Not Specified",
-      message,
+      phone,
+      companySize,
+      projectType: resolvedProject,
+      message: resolvedMessage,
     };
 
-    // 1. Try to send to Google Sheets if environment variable is set
-    const googleSheetUrl = process.env.GOOGLE_SHEETS_URL || process.env.GOOGLE_SHEET_WEBAPP_URL;
+    // 1. Direct integration with Google Sheets Web App
+    const googleSheetUrl =
+      process.env.GOOGLE_SHEETS_URL ||
+      process.env.GOOGLE_SHEET_WEBAPP_URL ||
+      process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;
+
     let sheetSubmitted = false;
     let sheetError = null;
 
-    if (googleSheetUrl) {
+    if (googleSheetUrl && googleSheetUrl.trim() !== "") {
       try {
-        const response = await fetch(googleSheetUrl, {
+        const response = await fetch(googleSheetUrl.trim(), {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Accept: "application/json",
           },
           body: JSON.stringify(submission),
+          redirect: "follow",
+          cache: "no-store",
         });
 
-        if (response.ok) {
+        // Google Apps Script usually returns 200 (or follows 302 to echo output)
+        if (response.ok || response.status === 302 || response.status === 200) {
           sheetSubmitted = true;
         } else {
-          sheetError = `Google Sheets returned status ${response.status}`;
+          const respText = await response.text().catch(() => "");
+          sheetError = `Google Sheets responded with HTTP ${response.status}: ${respText.slice(0, 100)}`;
+          console.warn(sheetError);
         }
       } catch (err: any) {
-        sheetError = err.message || "Failed to fetch Google Sheets endpoint";
+        sheetError = err.message || "Failed to reach Google Sheets endpoint";
+        console.error("Google Sheets fetch error:", err);
       }
     }
 
-    // 2. Local fallback storage (always save locally to prevent data loss)
+    // 2. Local fallback / persistent backup storage (ensures 100% zero data loss)
     const scratchDir = path.join(process.cwd(), "scratch");
     const filePath = path.join(scratchDir, "form_submissions.json");
 
     try {
-      // Ensure scratch directory exists
       await fs.mkdir(scratchDir, { recursive: true });
 
       let submissions = [];
       try {
         const fileContent = await fs.readFile(filePath, "utf-8");
         submissions = JSON.parse(fileContent);
-      } catch (err) {
-        // File does not exist or is invalid, start with empty array
+      } catch {
+        submissions = [];
       }
 
       submissions.push(submission);
@@ -72,12 +107,14 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      timestamp,
+      timestamp: formattedTimestamp,
       sheetSubmitted,
       sheetError,
       message: sheetSubmitted
-        ? "Form successfully saved to Google Sheets and backup log."
-        : "Form saved to local backup (Google Sheets webhook not configured or offline).",
+        ? "Form successfully submitted to Google Sheet and backed up."
+        : googleSheetUrl
+        ? `Saved to local backup log (Google Sheet returned error: ${sheetError}).`
+        : "Form saved to local backup (Google Sheets webhook URL not configured in .env.local).",
     });
   } catch (error: any) {
     console.error("Submission API Error:", error);

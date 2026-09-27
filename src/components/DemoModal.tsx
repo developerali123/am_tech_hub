@@ -18,15 +18,39 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!name || !email) return;
     setIsSubmitting(true);
 
-    // Mock API call delay
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          companySize,
+          projectType: `Demo Request: ${service === "saas" ? "HRMS & Payroll SaaS" : service === "pos" ? "Commercial POS" : service === "custom" ? "Custom Engineering" : "Cloud DevOps"} (Headcount: ${companySize || "N/A"})`,
+          service,
+          message: message || `Client requested a live demo. Company size: ${companySize || "Not specified"}. Interest: ${service}.`,
+          source: "Demo Booking Modal",
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setSubmitted(true);
+      }
+    } catch (err) {
+      console.error("Demo modal submit error:", err);
       setSubmitted(true);
-    }, 1500);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {

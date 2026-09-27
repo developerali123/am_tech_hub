@@ -28,7 +28,10 @@ export default function ContactUs({ isHRMS = false, isPOS = false }: ContactUsPr
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          source: isPOS ? "Commercial POS Page" : isHRMS ? "HRMS Page Contact" : "Main Website Contact",
+        }),
       });
       
       if (response.ok) {
