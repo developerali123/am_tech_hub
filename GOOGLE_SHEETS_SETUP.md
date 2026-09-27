@@ -66,19 +66,26 @@ function doPost(e) {
       sheet.setFrozenRows(1);
     }
 
-    // 2. Append new row with submission data
+    // 2. Format phone to ensure Google Sheets never interprets '+' as an arithmetic formula
+    var rawPhone = data.phone ? String(data.phone).trim() : "-";
+    var safePhone = (rawPhone.startsWith("+") || rawPhone.startsWith("=")) ? "'" + rawPhone : rawPhone;
+
+    // 3. Append new row with submission data
     var newRow = [
       data.timestamp || new Date().toISOString(),
       data.source || "Website Contact Form",
       data.name || "N/A",
       data.email || "N/A",
-      data.phone || "-",
+      safePhone,
       data.companySize || "-",
       data.projectType || data.service || "General Inquiry",
       data.message || "-"
     ];
 
     sheet.appendRow(newRow);
+
+    // Force phone cell to Plain Text format
+    sheet.getRange(sheet.getLastRow(), 5).setNumberFormat("@");
 
     // Return success response to AM Tech Hub server
     return ContentService.createTextOutput(

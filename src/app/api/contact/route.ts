@@ -26,23 +26,43 @@ export async function POST(request: Request) {
     const resolvedProject = projectType || service || "General Inquiry";
     const resolvedMessage = message || `Inquiry received via ${source}.`;
 
+    // 1. Format timestamp in Pakistan Standard Time (PKT, UTC+5)
+    // Desired format: e.g. "27 Sept 2026 4:18 pm"
     const now = new Date();
-    const formattedTimestamp = now.toLocaleString("en-US", {
-      timeZone: "UTC",
-      year: "numeric",
+    const parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Karachi",
+      day: "numeric",
       month: "short",
-      day: "2-digit",
-      hour: "2-digit",
+      year: "numeric",
+      hour: "numeric",
       minute: "2-digit",
-      second: "2-digit",
-    }) + " UTC";
+      hour12: true,
+    }).formatToParts(now);
+
+    const partMap: Record<string, string> = {};
+    parts.forEach((p) => {
+      partMap[p.type] = p.value;
+    });
+
+    const rawMonth = partMap.month || "Sept";
+    const monthName = rawMonth === "Sep" ? "Sept" : rawMonth;
+    const dayPeriod = (partMap.dayPeriod || "").toLowerCase();
+    const formattedTimestamp = `${partMap.day} ${monthName} ${partMap.year} ${partMap.hour}:${partMap.minute} ${dayPeriod}`;
+
+    // 2. Fix phone column #ERROR! in Google Sheets:
+    // A leading '+' causes Google Sheets to treat the value as an invalid mathematical formula.
+    // Prepending a single quote (') instructs Google Sheets to store it as a clean text string without #ERROR!
+    const trimmedPhone = phone ? String(phone).trim() : "-";
+    const safePhone = trimmedPhone.startsWith("+")
+      ? `'${trimmedPhone}`
+      : trimmedPhone;
 
     const submission = {
       timestamp: formattedTimestamp,
       source,
       name,
       email,
-      phone,
+      phone: safePhone,
       companySize,
       projectType: resolvedProject,
       message: resolvedMessage,
@@ -64,6 +84,7 @@ export async function POST(request: Request) {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
           },
           body: JSON.stringify(submission),
           redirect: "follow",
