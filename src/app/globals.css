@@ -459,4 +459,70 @@ html.dark .reach-form-wrapper iframe,
 .dark .reach-form-wrapper iframe {
   filter: invert(0.92) hue-rotate(180deg) brightness(0.98) contrast(0.92);
   border-radius: 12px;
-}
+}
+
+/* ==========================================================================
+   Google Translate & Multilingual RTL Optimizations
+   ========================================================================== */
+
+/* Prevent Google Translate banner from shifting fixed / sticky headers down */
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+/* Hide default Google Translate banner, iframes, tooltips and highlights */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body > .skiptranslate {
+  display: none !important;
+}
+
+#google_translate_element {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* RTL layout adjustments for Arabic & Urdu */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] body {
+  direction: rtl;
+}
+
+/* Ensure inputs and textareas align correctly in RTL */
+html[dir="rtl"] input:not([type="checkbox"]):not([type="radio"]),
+html[dir="rtl"] textarea {
+  text-align: right;
+}
+
+/* Keep numbers and codes LTR for readability */
+html[dir="rtl"] [dir="ltr"],
+html[dir="rtl"] code,
+html[dir="rtl"] pre,
+html[dir="rtl"] input[type="tel"],
+html[dir="rtl"] input[type="email"] {
+  direction: ltr;
+  text-align: left;
+}
+

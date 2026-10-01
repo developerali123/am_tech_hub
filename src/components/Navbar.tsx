@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageSelector } from "@/components/LanguageSelector";
 import {
   RiStore2Line,
   RiTeamLine,
@@ -390,8 +391,9 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
             </a>
           </nav>
 
-          {/* Desktop Call to Action & Theme Toggle */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* Desktop Call to Action & Language Selector & Theme Toggle */}
+          <div className="hidden md:flex items-center gap-3">
+            <LanguageSelector />
             <ThemeToggle />
             
             <a
@@ -402,8 +404,9 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
             </a>
           </div>
 
-          {/* Mobile Theme Toggle & Menu Button */}
+          {/* Mobile Theme Toggle, Language Selector & Menu Button */}
           <div className="flex md:hidden items-center gap-2">
+            <LanguageSelector />
             <ThemeToggle />
 
             <button
@@ -430,6 +433,13 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
         }`}
       >
         <div className="flex flex-col gap-3">
+          {/* Mobile Language Selector Widget */}
+          <div className="pb-3 border-b border-slate-200 dark:border-brand-dark-gray/40">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-1 mb-2 block font-sans">
+              Language / لغة
+            </span>
+            <LanguageSelector variant="mobile" />
+          </div>
           {mobileNavLinks.map((link) => {
             if (link.items) {
               return (

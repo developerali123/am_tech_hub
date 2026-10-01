@@ -4,6 +4,7 @@ import * as React from "react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageSelector } from "@/components/LanguageSelector";
 import { RiSunLine, RiMoonLine, RiMenuLine, RiCloseLine, RiFlashlightLine } from "@remixicon/react";
 import { cn } from "@/lib/utils";
 
@@ -73,6 +74,7 @@ export function Header({ onOpenDemo }: { onOpenDemo: () => void }) {
 
         {/* CTA & Actions */}
         <div className="hidden lg:flex items-center gap-3">
+          <LanguageSelector />
           {/* Theme Toggle */}
           <ThemeToggle />
 
@@ -83,6 +85,7 @@ export function Header({ onOpenDemo }: { onOpenDemo: () => void }) {
 
         {/* Mobile controls */}
         <div className="flex xl:hidden items-center gap-2">
+          <LanguageSelector />
           {/* Theme Toggle */}
           <ThemeToggle />
 
@@ -105,6 +108,9 @@ export function Header({ onOpenDemo }: { onOpenDemo: () => void }) {
           mobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         )}
       >
+        <div className="mb-4 pb-3 border-b border-border/50">
+          <LanguageSelector variant="mobile" />
+        </div>
         <nav className="flex flex-col gap-4 mb-8">
           {NAV_ITEMS.map((item) => (
             <a
