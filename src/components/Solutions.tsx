@@ -1,12 +1,13 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 export default function Solutions() {
   const cards = [
     {
       id: "pos",
-      title: "Commercial POS & Retail",
+      title: "Smart POS & Retail",
       subtitle: "Counter, Stock & FBR Compliance",
       description:
         "Point of sale for retail and wholesale — barcode checkout, multi-branch stock transfers, customer credit khata, and FBR fiscal invoicing.",
@@ -17,12 +18,15 @@ export default function Solutions() {
       ],
       href: "/pos",
       icon: (
-        <svg className="w-8 h-8 text-brand-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="2" y="3" width="20" height="14" rx="2" />
-          <line x1="8" y1="21" x2="16" y2="21" />
-          <line x1="12" y1="17" x2="12" y2="21" />
-          <path d="M6 8h12M6 12h8" />
-        </svg>
+        <div className="relative size-8 rounded-lg overflow-hidden bg-white p-0.5 flex items-center justify-center border border-slate-200 dark:border-brand-teal/20">
+          <Image
+            src="/smartpos-logo.jpg"
+            alt="Smart POS Logo"
+            width={30}
+            height={30}
+            className="w-full h-full object-contain"
+          />
+        </div>
       ),
     },
     {

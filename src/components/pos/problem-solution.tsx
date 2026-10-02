@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import {
   RiCloseCircleLine,
   RiCheckboxCircleLine,
@@ -112,11 +113,17 @@ export function POSProblemSolution() {
             <div>
               <div className="flex items-center justify-between pb-6 mb-6 border-b border-border">
                 <div className="flex items-center gap-3">
-                  <div className="size-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
-                    <RiSparklingLine className="size-6" />
+                  <div className="size-10 rounded-xl bg-white border border-border flex items-center justify-center p-0.5 overflow-hidden shrink-0 shadow-sm">
+                    <Image
+                      src="/smartpos-logo.jpg"
+                      alt="Smart POS Logo"
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-foreground">Commercial POS</h3>
+                    <h3 className="text-lg font-bold text-foreground">Smart POS</h3>
                     <p className="text-xs text-blue-600 dark:text-blue-400 font-medium">Integrated Counter, Stock & Fiscal Compliance</p>
                   </div>
                 </div>

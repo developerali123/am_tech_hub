@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -67,12 +68,19 @@ export function POSHeader({ onOpenDemo }: { onOpenDemo?: () => void } = {}) {
         {/* Brand Logo */}
         <div className="flex items-center gap-3">
           <a href="/pos" className="flex items-center gap-2.5 font-bold text-xl tracking-tight text-foreground group">
-            <div className="size-9 rounded-xl bg-gradient-to-br from-[#0074d9] to-blue-900 border border-[#0074d9]/40 flex items-center justify-center text-white shadow-md shadow-[#0074d9]/25 group-hover:scale-105 transition-transform">
-              <RiStore2Line className="size-5 text-blue-200" />
+            <div className="size-9 rounded-xl bg-white border border-border flex items-center justify-center p-0.5 shadow-md shadow-blue-500/10 group-hover:scale-105 transition-transform overflow-hidden shrink-0">
+              <Image
+                src="/smartpos-logo.jpg"
+                alt="Smart POS Logo"
+                width={36}
+                height={36}
+                className="w-full h-full object-contain rounded-lg"
+                priority
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-extrabold text-foreground leading-tight">
-                Commercial <span className="text-blue-600 dark:text-blue-400">POS</span>
+                Smart <span className="text-blue-600 dark:text-blue-400">POS</span>
               </span>
               <span className="text-[9px] uppercase tracking-widest text-muted-foreground font-semibold leading-none">
                 Counter to Compliance

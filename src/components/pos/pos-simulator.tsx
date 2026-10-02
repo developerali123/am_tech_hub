@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   RiBarcodeLine,
   RiAddLine,
@@ -179,7 +180,7 @@ export function POSSimulator() {
             <span>Interactive Counter Simulator</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-foreground mb-4">
-            Test the Commercial POS counter in real time
+            Test the Smart POS counter in real time
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
             Click items to add to the active ticket, test CFT volume calculations for timber lots, toggle FBR GST rates, and preview the fiscal thermal receipt.
@@ -192,9 +193,17 @@ export function POSSimulator() {
           {/* Top Operational Bar */}
           <div className="p-4 md:px-6 bg-muted/40 border-b border-border flex flex-wrap items-center justify-between gap-4 text-xs">
             <div className="flex items-center gap-3">
-              <span className="flex items-center gap-1.5 font-bold text-foreground">
-                <RiStore2Line className="size-4 text-blue-600 dark:text-blue-400" />
-                Commercial POS Terminal #01 (Lahore Branch)
+              <span className="flex items-center gap-2 font-bold text-foreground">
+                <div className="size-5 rounded-md bg-white border border-border flex items-center justify-center p-0.5 overflow-hidden shrink-0">
+                  <Image
+                    src="/smartpos-logo.jpg"
+                    alt="Smart POS Logo"
+                    width={20}
+                    height={20}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                Smart POS Terminal #01 (Lahore Branch)
               </span>
               <span className="hidden sm:inline text-muted-foreground">|</span>
               <span className="text-muted-foreground hidden sm:inline">
@@ -459,8 +468,19 @@ export function POSSimulator() {
 
               {/* Thermal Receipt Visual */}
               <div className="text-center pb-4 border-b border-dashed border-slate-300">
+                <div className="flex justify-center mb-1.5">
+                  <div className="size-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center p-0.5 shadow-xs overflow-hidden">
+                    <Image
+                      src="/smartpos-logo.jpg"
+                      alt="Smart POS Logo"
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
                 <div className="font-extrabold text-base uppercase tracking-tight text-slate-900">
-                  Commercial POS
+                  Smart POS
                 </div>
                 <div className="text-[11px] text-slate-600 font-medium">
                   Branch #01 — Lahore Commercial Center

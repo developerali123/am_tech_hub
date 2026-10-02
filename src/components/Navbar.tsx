@@ -49,7 +49,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
     {
       name: "Solutions",
       items: [
-        { name: "Commercial POS & Retail", href: "/pos" },
+        { name: "Smart POS & Retail", href: "/pos" },
         { name: "Workforce HRMS & Payroll", href: "/hrms" },
         { name: "AI-Powered Automation", href: "/solutions/ai" },
         { name: "High-Concurrency Systems", href: "/solutions/concurrency" },
@@ -222,18 +222,24 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
                       Flagship Production SaaS
                     </div>
 
-                    {/* POS Card */}
+                    {/* Smart POS Card */}
                     <a
                       href="/pos"
                       className="p-4 rounded-2xl bg-slate-50/80 hover:bg-blue-50/50 dark:bg-brand-dark-gray/30 dark:hover:bg-brand-dark-gray/60 border border-slate-200/80 dark:border-brand-teal/15 transition-all group/item flex items-start gap-4"
                     >
-                      <div className="size-11 rounded-xl bg-gradient-to-br from-[#0074d9] to-[#001f3f] border border-[#0074d9]/40 flex items-center justify-center text-white shrink-0 shadow-sm shadow-[#0074d9]/25 group-hover/item:scale-105 transition-transform">
-                        <RiStore2Line className="size-6 text-[#4da3ff]" />
+                      <div className="size-11 rounded-xl bg-white border border-slate-200 dark:border-blue-500/30 flex items-center justify-center p-1 shrink-0 shadow-sm shadow-[#0074d9]/10 group-hover/item:scale-105 transition-transform overflow-hidden">
+                        <Image
+                          src="/smartpos-logo.jpg"
+                          alt="Smart POS Logo"
+                          width={40}
+                          height={40}
+                          className="w-full h-full object-contain rounded-lg"
+                        />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
                           <span className="text-sm font-bold text-slate-900 dark:text-white group-hover/item:text-[#0074d9] dark:group-hover/item:text-brand-cyan transition-colors font-sans">
-                            Commercial POS Platform
+                            Smart POS Platform
                           </span>
                           <span className="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400">
                             FBR Ready

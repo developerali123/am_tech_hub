@@ -24,7 +24,7 @@ export default function Footer() {
     {
       title: "Solutions",
       links: [
-        { name: "Commercial POS", href: "/pos" },
+        { name: "Smart POS", href: "/pos" },
         { name: "Enterprise HRMS", href: "/hrms" },
         { name: "Automated Payroll", href: "/hrms#payroll" },
         { name: "FBR Fiscal Invoicing", href: "/pos#deep-features" },
@@ -63,7 +63,7 @@ export default function Footer() {
               </span>
             </a>
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
-              Engineering high-performance enterprise applications, Commercial POS retail platforms, automated Payroll & HRMS SaaS suites, and high-concurrency custom architectures.
+              Engineering high-performance enterprise applications, Smart POS retail platforms, automated Payroll & HRMS SaaS suites, and high-concurrency custom architectures.
             </p>
             {/* Social Icons */}
             <div className="flex gap-4">

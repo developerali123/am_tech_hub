@@ -193,7 +193,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
         {/* Sub-headline */}
         <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed font-sans">
           Stop struggling with fragmented tools, payroll delays, and rigid off-the-shelf software. 
-          AM Tech Hub engineers automated, audit-ready HRMS platforms, lightning-fast commercial POS systems, 
+          AM Tech Hub engineers automated, audit-ready HRMS platforms, lightning-fast Smart POS systems, 
           and dedicated custom cloud solutions tailored to your real business workflows.
         </p>
 

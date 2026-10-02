@@ -33,7 +33,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
           name,
           email,
           companySize,
-          projectType: `Demo Request: ${service === "saas" ? "HRMS & Payroll SaaS" : service === "pos" ? "Commercial POS" : service === "custom" ? "Custom Engineering" : "Cloud DevOps"} (Headcount: ${companySize || "N/A"})`,
+          projectType: `Demo Request: ${service === "saas" ? "HRMS & Payroll SaaS" : service === "pos" ? "Smart POS" : service === "custom" ? "Custom Engineering" : "Cloud DevOps"} (Headcount: ${companySize || "N/A"})`,
           service,
           message: message || `Client requested a live demo. Company size: ${companySize || "Not specified"}. Interest: ${service}.`,
           source: "Demo Booking Modal",
@@ -164,6 +164,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                   className="w-full px-4 py-3 rounded-xl border border-brand-dark-gray bg-brand-midnight text-sm text-slate-200 focus:outline-none focus:border-brand-teal focus:ring-1 focus:ring-brand-teal/30 transition-colors cursor-pointer"
                 >
                   <option value="saas" className="bg-brand-midnight">SaaS Products (HRMS/Payroll)</option>
+                  <option value="pos" className="bg-brand-midnight">Smart POS (Retail/Wholesale)</option>
                   <option value="custom" className="bg-brand-midnight">Custom Engineering</option>
                   <option value="devops" className="bg-brand-midnight">Cloud Infrastructure</option>
                 </select>

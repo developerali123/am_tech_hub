@@ -163,7 +163,7 @@ export function POSFeaturePillars() {
             Everything your retail & wholesale operation needs
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            No bloated junk drawers. Commercial POS focuses on the six core disciplines that make stores profitable, accountable, and legally compliant.
+            No bloated junk drawers. Smart POS focuses on the six core disciplines that make stores profitable, accountable, and legally compliant.
           </p>
         </div>
 

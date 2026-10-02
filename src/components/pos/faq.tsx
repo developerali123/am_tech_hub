@@ -8,7 +8,7 @@ export function POSFaq() {
 
   const FAQS = [
     {
-      q: "Does Commercial POS support multiple branches and warehouses?",
+      q: "Does Smart POS support multiple branches and warehouses?",
       a: "Yes. The platform is architected with a strict hierarchy: Company → Branches → Warehouses. You can transfer stock between locations with in-transit tracking, compare branch sales velocity in real-time, and let branch managers manage local staff while maintaining central company oversight.",
     },
     {
@@ -16,7 +16,7 @@ export function POSFaq() {
       a: "Absolutely. Our granular Role-Based Access Control (RBAC) ensures cashiers only see the fast checkout terminal, customer directory, and their own shift drawer. Warehouse workers only manage goods receipts, physical cycle counts, and stock transfers. Pricing, tax rules, and company financials remain restricted to Admins.",
     },
     {
-      q: "Is Commercial POS only for wood and timber trading?",
+      q: "Is Smart POS only for wood and timber trading?",
       a: "No. Standard Commercial Retail is the core foundation—optimized for general retail, hardware, electronics, garments, and wholesale. The Wood Trading pack is an optional industry module that activates specialized volume formulas (CFT), serial piece tracking, and wagon/car batch receiving without cluttering standard retail users.",
     },
     {
@@ -25,7 +25,7 @@ export function POSFaq() {
     },
     {
       q: "Can we print barcode labels and thermal receipts with our logo?",
-      a: "Yes. Commercial POS connects seamlessly with standard 80mm and 58mm thermal receipt printers via USB or network IP, supporting high-speed ESC/POS commands. You can customize the receipt header, store logo, terms, and footer. It also includes a built-in barcode label designer for printing sticky product price tags.",
+      a: "Yes. Smart POS connects seamlessly with standard 80mm and 58mm thermal receipt printers via USB or network IP, supporting high-speed ESC/POS commands. You can customize the receipt header, store logo, terms, and footer. It also includes a built-in barcode label designer for printing sticky product price tags.",
     },
     {
       q: "What reports and financial exports are included?",

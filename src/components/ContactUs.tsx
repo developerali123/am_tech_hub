@@ -11,7 +11,7 @@ export default function ContactUs({ isHRMS = false, isPOS = false }: ContactUsPr
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    projectType: isPOS ? "Commercial POS / Retail" : isHRMS ? "SaaS Platform Integration" : "Custom Dev",
+    projectType: isPOS ? "Smart POS / Retail" : isHRMS ? "SaaS Platform Integration" : "Custom Dev",
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -30,7 +30,7 @@ export default function ContactUs({ isHRMS = false, isPOS = false }: ContactUsPr
         },
         body: JSON.stringify({
           ...formData,
-          source: isPOS ? "Commercial POS Page" : isHRMS ? "HRMS Page Contact" : "Main Website Contact",
+          source: isPOS ? "Smart POS Page" : isHRMS ? "HRMS Page Contact" : "Main Website Contact",
         }),
       });
       
@@ -39,7 +39,7 @@ export default function ContactUs({ isHRMS = false, isPOS = false }: ContactUsPr
         setFormData({
           name: "",
           email: "",
-          projectType: isPOS ? "Commercial POS / Retail" : isHRMS ? "SaaS Platform Integration" : "Custom Dev",
+          projectType: isPOS ? "Smart POS / Retail" : isHRMS ? "SaaS Platform Integration" : "Custom Dev",
           message: "",
         });
       } else {
@@ -338,7 +338,7 @@ export default function ContactUs({ isHRMS = false, isPOS = false }: ContactUsPr
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                       className={selectClass}
                     >
-                      <option value="Commercial POS / Retail">Commercial POS / Retail Platform</option>
+                      <option value="Smart POS / Retail">Smart POS / Retail Platform</option>
                       <option value="SaaS Platform Integration">SaaS Platform Integration (HRMS/Payroll)</option>
                       <option value="Custom Dev">Custom Full-Stack Dev</option>
                       <option value="DevOps Architecture">Cloud & DevOps Architecture</option>

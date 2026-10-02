@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   RiArrowRightUpLine,
@@ -38,12 +39,23 @@ export function POSHero({ onOpenDemo }: { onOpenDemo?: () => void } = {}) {
           {/* Eyebrow Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-xs font-semibold text-blue-600 dark:text-blue-400 mb-6 shadow-xs">
             <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>Commercial POS Platform · Multi-Company & Branch Ready</span>
+            <span>Smart POS Platform · Multi-Company & Branch Ready</span>
           </div>
 
           {/* Hero Brand Title */}
-          <div className="text-xs font-extrabold uppercase tracking-[0.25em] text-muted-foreground mb-2">
-            Commercial POS
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-card border border-border/80 mb-3 shadow-xs">
+            <div className="size-6 rounded-md bg-white border border-border flex items-center justify-center p-0.5 overflow-hidden shrink-0">
+              <Image
+                src="/smartpos-logo.jpg"
+                alt="Smart POS Logo"
+                width={24}
+                height={24}
+                className="w-full h-full object-contain rounded-sm"
+              />
+            </div>
+            <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-foreground">
+              Smart POS
+            </span>
           </div>
 
           {/* Headline */}
@@ -56,7 +68,7 @@ export function POSHero({ onOpenDemo }: { onOpenDemo?: () => void } = {}) {
 
           {/* Subheading */}
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
-            Commercial POS connects checkout, inventory, purchases, and FBR-ready reporting so your team stops juggling spreadsheets. Built for Pakistan SMEs, wholesale operations, and growing multi-branch chains.
+            Smart POS connects checkout, inventory, purchases, and FBR-ready reporting so your team stops juggling spreadsheets. Built for Pakistan SMEs, wholesale operations, and growing multi-branch chains.
           </p>
 
           {/* CTAs */}
@@ -105,9 +117,20 @@ export function POSHero({ onOpenDemo }: { onOpenDemo?: () => void } = {}) {
                 <div className="size-3 rounded-full bg-red-500/80" />
                 <div className="size-3 rounded-full bg-amber-500/80" />
                 <div className="size-3 rounded-full bg-emerald-500/80" />
-                <span className="text-xs font-mono font-semibold text-foreground/80 ml-3 hidden sm:inline">
-                  Commercial POS v2.4 · Main Store Terminal #01
-                </span>
+                <div className="flex items-center gap-2 ml-3">
+                  <div className="size-5 rounded-md bg-white border border-border flex items-center justify-center p-0.5 overflow-hidden shrink-0">
+                    <Image
+                      src="/smartpos-logo.jpg"
+                      alt="Smart POS Logo"
+                      width={20}
+                      height={20}
+                      className="w-full h-full object-contain rounded-xs"
+                    />
+                  </div>
+                  <span className="text-xs font-mono font-semibold text-foreground/80 hidden sm:inline">
+                    Smart POS v2.4 · Main Store Terminal #01
+                  </span>
+                </div>
               </div>
 
               <div className="flex items-center gap-3 text-xs">

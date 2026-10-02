@@ -42,7 +42,7 @@ export function POSIndustryPacks() {
     specialty: {
       title: "Garments, Pharmacy & Supermarket",
       badge: "Template Packs",
-      desc: "Flexible data attributes let you adapt Commercial POS for matrix-based inventory needs in minutes.",
+      desc: "Flexible data attributes let you adapt Smart POS for matrix-based inventory needs in minutes.",
       bullets: [
         "Garments: Matrix grid for Color × Size × Fit with unified master barcode labels",
         "Pharmacy: Batch numbers, expiry date enforcement, and controlled substance tracking",

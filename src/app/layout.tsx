@@ -15,15 +15,15 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://amtechhub.online"),
   title: {
-    default: "AM Tech Hub | Custom Software, Enterprise HRMS & Commercial POS Solutions",
+    default: "AM Tech Hub | Custom Software, Enterprise HRMS & Smart POS Solutions",
     template: "%s | AM Tech Hub",
   },
-  description: "AM Tech Hub delivers intelligent enterprise software: audit-ready HRMS & payroll automation, high-speed commercial POS systems, and dedicated custom cloud software engineering for growing businesses.",
+  description: "AM Tech Hub delivers intelligent enterprise software: audit-ready HRMS & payroll automation, high-speed Smart POS systems, and dedicated custom cloud software engineering for growing businesses.",
   keywords: [
     "Custom Software Development Company",
     "Enterprise HRMS Software",
     "Automated Payroll System",
-    "Commercial POS System",
+    "Smart POS System",
     "Retail Point of Sale",
     "Inventory Management Software",
     "B2B SaaS Engineering",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "AM Tech Hub | Custom Software, Enterprise HRMS & Commercial POS Solutions",
-    description: "Build, automate, and scale with AM Tech Hub. Custom SaaS engineering, high-performance HRMS payroll platforms, and commercial POS systems engineered for reliable business growth.",
+    title: "AM Tech Hub | Custom Software, Enterprise HRMS & Smart POS Solutions",
+    description: "Build, automate, and scale with AM Tech Hub. Custom SaaS engineering, high-performance HRMS payroll platforms, and Smart POS systems engineered for reliable business growth.",
     url: "https://amtechhub.online",
     siteName: "AM Tech Hub",
     type: "website",
@@ -53,7 +53,7 @@ const structuredData = {
       "name": "AM Tech Hub",
       "url": "https://amtechhub.online",
       "logo": "https://amtechhub.online/favicon.ico",
-      "description": "Enterprise software engineering studio specializing in automated HRMS & Payroll suites, commercial POS systems, and custom cloud architecture.",
+      "description": "Enterprise software engineering studio specializing in automated HRMS & Payroll suites, Smart POS systems, and custom cloud architecture.",
       "sameAs": [
         "https://www.linkedin.com/company/amtechhub"
       ]
@@ -78,7 +78,7 @@ const structuredData = {
     },
     {
       "@type": "SoftwareApplication",
-      "name": "AM Tech Hub Commercial POS",
+      "name": "AM Tech Hub Smart POS",
       "operatingSystem": "Web, Windows, Cloud",
       "applicationCategory": "PointOfSaleApplication",
       "offers": {

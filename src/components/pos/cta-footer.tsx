@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   RiStore2Line,
@@ -29,7 +30,7 @@ export function POSCtaFooter({ onOpenDemo }: POSCtaFooterProps) {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">
-            See Commercial POS on your actual workflow
+            See Smart POS on your actual workflow
           </h2>
 
           <p className="text-slate-300 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
@@ -46,7 +47,7 @@ export function POSCtaFooter({ onOpenDemo }: POSCtaFooterProps) {
             </Button>
 
             <a
-              href="https://wa.me/?text=Hello%20AM%20Tech%20Hub,%20I%20would%20like%20a%20demo%20of%20Commercial%20POS"
+              href="https://wa.me/?text=Hello%20AM%20Tech%20Hub,%20I%20would%20like%20a%20demo%20of%20Smart%20POS"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full py-3.5 px-8 text-sm md:text-base font-semibold border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 transition-all"
@@ -65,11 +66,17 @@ export function POSCtaFooter({ onOpenDemo }: POSCtaFooterProps) {
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="size-8 rounded-xl bg-[#0074d9] flex items-center justify-center text-white">
-                <RiStore2Line className="size-4 text-white" />
+              <div className="size-8 rounded-lg bg-white flex items-center justify-center p-0.5 overflow-hidden shrink-0 border border-slate-700">
+                <Image
+                  src="/smartpos-logo.jpg"
+                  alt="Smart POS Logo"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="text-base font-extrabold text-white">
-                Commercial <span className="text-[#4da3ff]">POS</span>
+                Smart <span className="text-[#4da3ff]">POS</span>
               </span>
             </div>
 
@@ -116,7 +123,7 @@ export function POSCtaFooter({ onOpenDemo }: POSCtaFooterProps) {
         {/* Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <div>
-            &copy; {new Date().getFullYear()} AM Tech Hub. Commercial POS is a trademark of AM Tech Hub.
+            &copy; {new Date().getFullYear()} AM Tech Hub. Smart POS is a trademark of AM Tech Hub.
           </div>
           <div className="flex items-center gap-6">
             <span>Pakistan Market Ready (PKR & GST)</span>

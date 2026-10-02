@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 export default function AboutUs() {
   const values = [
@@ -19,7 +20,7 @@ export default function AboutUs() {
     {
       title: "Tailored to Your Workflows",
       description:
-        "No two businesses operate the exact same way. Instead of forcing you into a rigid one-size-fits-all box, we customize our HRMS, POS, and cloud platforms to match how your business actually runs, eliminating tedious manual workarounds.",
+        "No two businesses operate the exact same way. Instead of forcing you into a rigid one-size-fits-all box, we customize our HRMS, Smart POS, and cloud platforms to match how your business actually runs, eliminating tedious manual workarounds.",
       icon: (
         <svg className="w-6 h-6 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22h9M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
@@ -61,7 +62,7 @@ export default function AboutUs() {
             </span>
           </h2>
           <p className="text-slate-400 mt-6 text-base md:text-lg leading-relaxed font-sans">
-            AM Tech Hub is an agile software engineering studio. We combine ready-to-deploy enterprise SaaS products (HRMS, Payroll, Commercial POS) with custom software development to help ambitious businesses streamline operations and scale without tech bottlenecks.
+            AM Tech Hub is an agile software engineering studio. We combine ready-to-deploy enterprise SaaS products (HRMS, Payroll, Smart POS) with custom software development to help ambitious businesses streamline operations and scale without tech bottlenecks.
           </p>
         </div>
 
@@ -87,16 +88,27 @@ export default function AboutUs() {
 
         {/* Dynamic Highlight Cards for Flagship Products */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Card 1: Commercial POS */}
+          {/* Card 1: Smart POS */}
           <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-blue-50/90 via-white to-slate-50 dark:from-[#001f3f]/90 dark:via-[#001428] dark:to-brand-midnight border border-blue-200 dark:border-[#0074d9]/40 relative overflow-hidden group flex flex-col justify-between shadow-md dark:shadow-2xl dark:shadow-black/60">
             <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-500/10 dark:bg-blue-500/20 rounded-full blur-[80px] pointer-events-none group-hover:bg-blue-500/30 transition-all duration-500"></div>
             
             <div className="relative z-10">
-              <span className="text-[10px] font-bold tracking-widest text-blue-700 dark:text-[#4da3ff] uppercase bg-blue-100/80 dark:bg-[#0074d9]/15 border border-blue-300/60 dark:border-[#0074d9]/30 px-3 py-1 rounded-full">
-                Retail & Wholesale Spotlight
-              </span>
-              <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mt-4 font-sans">
-                Commercial POS & Fiscal Invoicing
+              <div className="flex items-center gap-3 mb-4">
+                <div className="size-11 rounded-xl overflow-hidden bg-white border border-blue-200 dark:border-blue-500/30 flex items-center justify-center shrink-0 p-1 shadow-sm">
+                  <Image
+                    src="/smartpos-logo.jpg"
+                    alt="Smart POS Logo"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-contain rounded-lg"
+                  />
+                </div>
+                <span className="text-[10px] font-bold tracking-widest text-blue-700 dark:text-[#4da3ff] uppercase bg-blue-100/80 dark:bg-[#0074d9]/15 border border-blue-300/60 dark:border-[#0074d9]/30 px-3 py-1 rounded-full">
+                  Retail & Wholesale Spotlight
+                </span>
+              </div>
+              <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white font-sans">
+                Smart POS & Fiscal Invoicing
               </h3>
               <p className="text-slate-600 dark:text-slate-300 text-sm mt-3 leading-relaxed font-sans">
                 Engineered for growing retail chains and wholesale yards. Fast barcode sales, multi-warehouse stock, customer credit khata, and FBR-ready fiscal reporting with optional Wood Trading (CFT) pack.
